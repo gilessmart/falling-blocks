@@ -1,0 +1,54 @@
+# outline
+
+game clock:
+    fires evey 3/4 second or so
+    game iteration (down)
+    render
+
+game iteration (direction): (step?)
+    if object landed
+    {
+        lock landed blocks in place
+
+        if there are complete lines
+            remove complete lines
+            move blocks that were above down 1 line
+            increment score by number of lines removed
+
+        if landed blocks pile is higher than permitted
+            game over
+            return
+        else
+            create a new falling object
+    }
+    move object in direction
+
+object landed:
+    if the falling object has landed
+    (if the top block in a column is vertically adjacent to a block in the falling object
+    or if one of the blocks in the falling object is on the bottom row)
+
+input signals
+right/left: move falling object right/left
+down: move object down
+
+when input key pressed:
+    stop listening to game clock
+
+    if polling input key
+        stop polling
+
+    game iteration (direction)
+    render
+
+    start polling the input key every 1/4 second or so
+        if input key has remained pressed
+            game iteration (direction)
+            render
+        else
+            stop polling input key
+            resume listening for game clock
+
+falling object
+    get collection of blocks(){}
+    occupiesLocation(location){}

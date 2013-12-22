@@ -1,0 +1,10 @@
+load:
+  - src/namespaces.js
+  - src/testCases/transform.js
+  - src/testCases/transformMatrix.js
+  - src/testCases/transformMatrixFactory.js
+  - src/testCases/transformMatrixDefinitionFactory.js
+  - src/testCases/transformVector.js
+
+test:
+  - test/*.js
