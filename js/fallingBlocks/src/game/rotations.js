@@ -1,4 +1,4 @@
 fallingBlocks.rotations = {
-    clockwise: -1,
-    anticlockwise: 1
+    anticlockwise: {},
+    clockwise: {}
 };
