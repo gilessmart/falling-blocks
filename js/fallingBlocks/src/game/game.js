@@ -1,9 +1,31 @@
 fallingBlocks.game.game = function(canvas, inputListener, settings) {
     var clock = fallingBlocks.game.clock(settings.dropInterval),
-        landedBlocks,
-        fallingBlock,
+        gameState = {
+            landedBlocks: fallingBlocks.game.landedBlocksCollection(settings.columns, settings.rows),
+            fallingBlock: spawnFallingBlock()
+        },
         engine,
         renderer;
+
+    function spawnFallingBlock() {
+        var fallingBlockDefinition = fallingBlocks.util.getRandomElement(settings.fallingBlockDefinitions),
+            initialPosition = {
+                x: Math.floor(settings.columns / 2),
+                y: fallingBlockDefinition.centreOffset.y * -1
+            };
+
+        return fallingBlocks.game.fallingBlock(fallingBlockDefinition, initialPosition);
+    }
+
+    function gameOver () {
+        clock.stop();
+        inputListener.stopListening();
+    }
+
+    function gameStart () {
+        inputListener.startListening();
+        clock.start();
+    }
 
     inputListener.onDirectionStart = function(direction){
         clock.stop();
@@ -26,36 +48,27 @@ fallingBlocks.game.game = function(canvas, inputListener, settings) {
         engine.tryToMoveFallingObject(fallingBlocks.game.directions.down);
     };
 
-    function createNewFallingBlock() {
-        var fallingBlockDefinition = fallingBlocks.util.getRandomElement(settings.fallingBlockDefinitions),
-            initialPosition = {
-                x: Math.floor(settings.columns / 2),
-                y: settings.rows + 2
-            };
-
-        return fallingBlocks.game.fallingBlock(fallingBlockDefinition, initialPosition)
-    }
-
     return {
         start: function(){
-            landedBlocks = fallingBlocks.game.landedBlocksCollection(settings.columns, settings.rows);
-            fallingBlock = createNewFallingBlock();
-            engine = fallingBlocks.game.engine(fallingBlock, landedBlocks);
-            renderer = fallingBlocks.game.renderer(canvas, fallingBlock, landedBlocks);
+            engine = fallingBlocks.game.engine(gameState);
+            renderer = fallingBlocks.game.renderer(canvas, gameState);
 
             engine.onUpdated = function(){
                 renderer.render();
             };
 
-            engine.onGameOver = function(){
-                clock.stop();
-                inputListener.stopListening();
-                renderer.render();
+            engine.onFallingBlockLanded = function(){
+                if (gameState.landedBlocks.isHighestBlockAbovePlayingArea()) {
+                    gameOver();
+                    renderer.render();
+                }
+                else {
+                    gameState.fallingBlock = spawnFallingBlock();
+                }
             };
 
-            inputListener.startListening();
+            gameStart();
             renderer.render();
-            clock.start();
         }
     };
 };
