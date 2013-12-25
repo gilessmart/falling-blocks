@@ -29,7 +29,8 @@ fallingBlocks.game.engine = function (gameState){
             });
 
         return translatedFallingBlockLocations.every(function(translatedFallingBlockLocation){
-            return gameState.landedBlocks.isLocationAvailable(translatedFallingBlockLocation);
+            return gameState.landedBlocks.isLocationAllowable(translatedFallingBlockLocation)
+                && !gameState.landedBlocks.isLocationOccupied(translatedFallingBlockLocation);
         });
     }
 
@@ -40,7 +41,7 @@ fallingBlocks.game.engine = function (gameState){
                 this.onUpdated();
             }
             else if (direction === fallingBlocks.game.directions.down) {
-                gameState.landedBlocks.addBlocks(gameState.fallingBlock.getBlockLocations());
+                gameState.landedBlocks.addLocations(gameState.fallingBlock.getBlockLocations());
 
                 var completeRowIndices = gameState.landedBlocks.getCompleteRowIndices();
 
@@ -50,6 +51,7 @@ fallingBlocks.game.engine = function (gameState){
                 }
 
                 this.onFallingBlockLanded();
+                this.onUpdated();
             }
         },
 

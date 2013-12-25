@@ -4,12 +4,12 @@ fallingBlocks.game.transform = function () {
     return {
         rotateQuarterTurns: function (quarterTurns) {
             var quarterTurnsMatrix = fallingBlocks.game.transformMatrixFactory.getQuarterTurns(quarterTurns);
-            matrix = matrix.dotProduct(quarterTurnsMatrix);
+            matrix = quarterTurnsMatrix.dotProduct(matrix);
         },
 
         translate: function (x, y) {
             var translationMatrix = fallingBlocks.game.transformMatrixFactory.getTranslation(x, y);
-            matrix = matrix.translate(translationMatrix);
+            matrix = translationMatrix.dotProduct(matrix);
         },
 
         getTransformedLocation: function (location) {

@@ -1,5 +1,6 @@
 fallingBlocks.game.transformMatrixDefinitionFactory = {
     getQuarterTurns: function(quarterTurns){
+        var quarterTurns = quarterTurns % 4;
         return [
             [
                 ((quarterTurns + 1) % 2) * (1 - quarterTurns),
@@ -22,7 +23,7 @@ fallingBlocks.game.transformMatrixDefinitionFactory = {
     getTranslation: function(x, y){
         return [
             [ 1, 0, x ],
-            [ 0, 0, y ],
+            [ 0, 1, y ],
             [ 0, 0, 1 ]
         ];
     },

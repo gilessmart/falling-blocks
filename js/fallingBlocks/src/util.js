@@ -7,7 +7,18 @@ fallingBlocks.util = {
         if (typeof objectA === typeof objectB) {
             switch (typeof objectA) {
                 case 'object':
-                    return fallingBlocks.util.areObjectsEqual(objectA, objectB);
+                    return (function areObjectsEqual () {
+                        var objectAKeys = Object.keys(objectA),
+                            objectBKeys = Object.keys(objectB);
+
+                        if (objectAKeys.length === objectBKeys.length) {
+                            return objectAKeys.every(function (key) {
+                                return fallingBlocks.util.areEqual(objectA[key], objectB[key]);
+                            });
+                        }
+
+                        return false;
+                    })();
 
                 case 'number':
                     return isNaN(objectA) && isNaN(objectB)
@@ -16,17 +27,6 @@ fallingBlocks.util = {
                 default:
                     return objectA === objectB;
             }
-        }
-
-        return false;
-    },
-
-    areObjectsEqual: function(objectA, objectB) {
-        if (objectA.length === objectB.length) {
-            var objectAKeys = Object.keys(objectA);
-            return objectAKeys.every(function(key){
-                fallingBlocks.util.areEqual(objectA[key], objectA[key]);
-            });
         }
 
         return false;

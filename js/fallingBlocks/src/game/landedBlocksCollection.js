@@ -1,33 +1,35 @@
 fallingBlocks.game.landedBlocksCollection = function(columns, rows) {
     var landedBlockLocations = [],
         me = {
-            getRows: function(){
+            getRows: function () {
                 return rows;
             },
 
-            getColumns: function(){
+            getColumns: function () {
                 return columns;
             },
 
-            isLocationOccupied: function(location){
+            isLocationOccupied: function (location){
                 return landedBlockLocations.some(function(landedBlockLocation){
                     return fallingBlocks.util.areEqual(landedBlockLocation, location);
                 });
             },
 
-            isLocationAvailable: function(location) {
+            isLocationAllowable: function (location) {
                 return location.x >= 0
                     && location.x < columns
-                    && location.y >= 0
-                    && !this.isLocationOccupied(location);
+                    && location.y >= 0;
             },
 
-            addBlocks: function(blockLocations) {
+            addLocations: function (blockLocations) {
                 landedBlockLocations = landedBlockLocations.concat(blockLocations);
             },
 
-            removeRows: function(rowIndices) {
-                rowIndices.forEach(function(rowNumber){
+            removeRows: function (rowIndices) {
+                // remove rows in reverse index order
+                // otherwise the rowIndex could refer to the wrong row
+                // todo: implement a distinct check
+                rowIndices.sort().reverse().forEach(function (rowNumber) {
                     removeRow(rowNumber);
                     moveLocationsDown(getLocationsHigherThan(rowNumber));
                 });
@@ -41,7 +43,7 @@ fallingBlocks.game.landedBlocksCollection = function(columns, rows) {
                     isRowComplete = true;
 
                     for (var col = 0; col < columns; col++) {
-                        if (!me.isLocationOccupied({ x: row, y: col})) {
+                        if (!me.isLocationOccupied({ x: col, y: row })) {
                             isRowComplete = false;
                             break;
                         }
@@ -62,28 +64,31 @@ fallingBlocks.game.landedBlocksCollection = function(columns, rows) {
             }
         };
 
-    function removeRow(rowNumber){
+    function removeRow (rowNumber) {
         var arrayIndices = landedBlockLocations
             .filter(function(location){
-                return location.x === rowNumber;
+                return location.y === rowNumber;
             })
             .map(function(location){
                 return landedBlockLocations.indexOf(location);
             });
 
-        arrayIndices.forEach(function(index){
+        // splice items out of array in reverse order
+        // otherwise the index of the item in the list could have been
+        // changed by a previous splice
+        arrayIndices.sort().reverse().forEach(function (index) {
             landedBlockLocations.splice(index, 1);
         });
     }
 
-    function getLocationsHigherThan(rowNumber) {
-        return landedBlockLocations.filter(function(location){
+    function getLocationsHigherThan (rowNumber) {
+        return landedBlockLocations.filter(function (location) {
             return location.y > rowNumber;
         });
     }
 
-    function moveLocationsDown(locations) {
-        locations.forEach(function(location){
+    function moveLocationsDown (locations) {
+        locations.forEach(function (location) {
             location.y -= 1;
         });
     }

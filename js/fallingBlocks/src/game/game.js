@@ -60,7 +60,6 @@ fallingBlocks.game.game = function(canvas, inputListener, settings) {
             engine.onFallingBlockLanded = function(){
                 if (gameState.landedBlocks.isHighestBlockAbovePlayingArea()) {
                     gameOver();
-                    renderer.render();
                 }
                 else {
                     gameState.fallingBlock = spawnFallingBlock();
