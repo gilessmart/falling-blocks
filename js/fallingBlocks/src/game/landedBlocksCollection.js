@@ -15,41 +15,52 @@ fallingBlocks.game.landedBlocksCollection = function(columns, rows) {
                 });
             },
 
-            landBlocks: function(blockLocations) {
+            isLocationAvailable: function(location) {
+                return location.x >= 0
+                    && location.x < columns
+                    && location.y >= 0
+                    && !this.isLocationOccupied(location);
+            },
+
+            addBlocks: function(blockLocations) {
                 landedBlockLocations = landedBlockLocations.concat(blockLocations);
             },
 
-            removeCompleteRows: function() {
-                var completeRowNumbers = getCompleteRowNumbers();
-
-                completeRowNumbers.forEach(function(rowNumber){
+            removeRows: function(rowIndices) {
+                rowIndices.forEach(function(rowNumber){
                     removeRow(rowNumber);
                     moveLocationsDown(getLocationsHigherThan(rowNumber));
                 });
+            },
+
+            getCompleteRowIndices: function () {
+                var result = [],
+                    isRowComplete;
+
+                for (var row = 0; row < rows; row++) {
+                    isRowComplete = true;
+
+                    for (var col = 0; col < columns; col++) {
+                        if (!me.isLocationOccupied({ x: row, y: col})) {
+                            isRowComplete = false;
+                            break;
+                        }
+                    }
+
+                    if (isRowComplete) {
+                        result.push(row);
+                    }
+                }
+
+                return result;
+            },
+
+            isHighestBlockAbovePlayingArea: function () {
+                return landedBlockLocations.some(function (location) {
+                    return location.y >= rows;
+                });
             }
         };
-
-    function getCompleteRowNumbers() {
-        var result = [],
-            isRowComplete;
-
-        for (var row = 0; row < rows; row++) {
-            isRowComplete = true;
-
-            for (var col = 0; col < columns; col++) {
-                if (!me.isLocationOccupied({ x: row, y: col})) {
-                    isRowComplete = false;
-                    break;
-                }
-            }
-
-            if (isRowComplete) {
-                result.push(row);
-            }
-        }
-
-        return result;
-    }
 
     function removeRow(rowNumber){
         var arrayIndices = landedBlockLocations

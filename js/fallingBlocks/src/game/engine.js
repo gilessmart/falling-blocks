@@ -1,38 +1,62 @@
-fallingBlocks.game.engine = function(fallingBlock, landedBlocks){
+fallingBlocks.game.engine = function (gameState){
+    function getTranslatedLocation(location, direction) {
+        var translatedLocation = {
+            x: location.x,
+            y: location.y
+        };
+
+        switch(direction) {
+            case fallingBlocks.game.directions.left:
+                translatedLocation.x -= 1;
+                break;
+
+            case fallingBlocks.game.directions.right:
+                translatedLocation.x += 1;
+                break;
+
+            case fallingBlocks.game.directions.down:
+                translatedLocation.y += 1;
+                break;
+        }
+
+        return translatedLocation;
+    }
+
+    function canMoveObjectInDirection (direction) {
+        var translatedFallingBlockLocations = gameState.fallingBlock.getBlockLocations()
+            .map(function (location) {
+                return getTranslatedLocation(location, direction);
+            });
+
+        return translatedFallingBlockLocations.every(function(translatedFallingBlockLocation){
+            return gameState.landedBlocks.isLocationAvailable(translatedFallingBlockLocation);
+        });
+    }
+
     return {
-        tryToMoveFallingObject: function(direction){
-            if (direction === fallingBlock.game.directions.down
-                && fallingBlockCanLand()) {
-                landFallingBlock();
-
-                var completeRowNumbers = landedBlocks.getCompleteRowNumbers()
-
-                if (completeRowNumbers > 0) {
-                    landedBlocks.removeRows(completeRowNumbers);
-                    this.onCompleteRowsRemoved(completeRowNumbers.length);
-                }
-
-                if (landedBlocks.currentHeight > heightLimit) {
-                    this.onGameOver();
-                    return;
-                }
-                else {
-                    // create new fallingObject
-                }
-
-                // move object down
+        tryToMoveFallingObject: function (direction) {
+            if (canMoveObjectInDirection(direction)) {
+                gameState.fallingBlock.move(direction);
+                this.onUpdated();
             }
+            else if (direction === fallingBlocks.game.directions.down) {
+                gameState.landedBlocks.addBlocks(gameState.fallingBlock.getBlockLocations());
 
-            // if direction is left or right
-                // check if we can move left or right
+                var completeRowIndices = gameState.landedBlocks.getCompleteRowIndices();
+
+                if (completeRowIndices > 0) {
+                    gameState.landedBlocks.removeRows(completeRowIndices);
+                    gameState.score += completeRowIndices.length;
+                }
+
+                this.onFallingBlockLanded();
+            }
         },
 
-        tryToRotateFallingObject: function(rotationDirection){},
+        tryToRotateFallingObject: function (rotationDirection) {},
 
-        onUpdated: function(){},
+        onUpdated: function () {},
 
-        onGameOver: function(){},
-
-        onCompleteRowsRemoved: function(rows){}
+        onFallingBlockLanded: function () {}
     }
 };
