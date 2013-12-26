@@ -23,7 +23,7 @@ fallingBlocks.game.engine = function (gameState){
     }
 
     function canMoveObjectInDirection (direction) {
-        var translatedFallingBlockLocations = gameState.fallingBlock.getBlockLocations()
+        var translatedFallingBlockLocations = gameState.fallingObject.getBlockLocations()
             .map(function (location) {
                 return getTranslatedLocation(location, direction);
             });
@@ -37,11 +37,11 @@ fallingBlocks.game.engine = function (gameState){
     return {
         tryToMoveFallingObject: function (direction) {
             if (canMoveObjectInDirection(direction)) {
-                gameState.fallingBlock.move(direction);
+                gameState.fallingObject.move(direction);
                 this.onUpdated();
             }
             else if (direction === fallingBlocks.game.directions.down) {
-                gameState.landedBlocks.addLocations(gameState.fallingBlock.getBlockLocations());
+                gameState.landedBlocks.addLocations(gameState.fallingObject.getBlockLocations());
 
                 var completeRowIndices = gameState.landedBlocks.getCompleteRowIndices();
 
@@ -55,7 +55,9 @@ fallingBlocks.game.engine = function (gameState){
             }
         },
 
-        tryToRotateFallingObject: function (rotationDirection) {},
+        tryToRotateFallingObject: function (rotationDirection) {
+
+        },
 
         onUpdated: function () {},
 

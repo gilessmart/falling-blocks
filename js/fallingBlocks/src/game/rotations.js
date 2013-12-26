@@ -1,4 +1,4 @@
-fallingBlocks.rotations = {
+fallingBlocks.game.rotations = {
     anticlockwise: {},
     clockwise: {}
 };

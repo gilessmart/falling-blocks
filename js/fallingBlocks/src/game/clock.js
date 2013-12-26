@@ -2,18 +2,18 @@ fallingBlocks.game.clock = function(interval){
     var intervalId;
 
     return {
-        start: function(){
+        start: function () {
             var me = this;
 
-            intervalId = setInterval(function(){
+            intervalId = setInterval(function () {
                 me.onTick();
             }, interval);
         },
 
-        stop: function(){
+        stop: function () {
             clearInterval(intervalId);
         },
 
-        onTick: function(){}
+        onTick: function () {}
     };
 };

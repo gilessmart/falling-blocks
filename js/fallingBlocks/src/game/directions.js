@@ -1,4 +1,4 @@
-fallingBlocks.directions = {
+fallingBlocks.game.directions = {
     left: {},
     right: {},
     down: {}

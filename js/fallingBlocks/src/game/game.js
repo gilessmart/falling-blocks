@@ -2,19 +2,19 @@ fallingBlocks.game.game = function(canvas, inputListener, settings) {
     var clock = fallingBlocks.game.clock(settings.dropInterval),
         gameState = {
             landedBlocks: fallingBlocks.game.landedBlocksCollection(settings.columns, settings.rows),
-            fallingBlock: spawnFallingBlock()
+            fallingObject: spawnFallingObject()
         },
         engine,
         renderer;
 
-    function spawnFallingBlock() {
+    function spawnFallingObject() {
         var fallingBlockDefinition = fallingBlocks.util.getRandomElement(settings.fallingBlockDefinitions),
             initialPosition = {
                 x: Math.floor(settings.columns / 2),
                 y: fallingBlockDefinition.centreOffset.y * -1
             };
 
-        return fallingBlocks.game.fallingBlock(fallingBlockDefinition, initialPosition);
+        return fallingBlocks.game.fallingObject(fallingBlockDefinition, initialPosition);
     }
 
     function gameOver () {
@@ -62,7 +62,7 @@ fallingBlocks.game.game = function(canvas, inputListener, settings) {
                     gameOver();
                 }
                 else {
-                    gameState.fallingBlock = spawnFallingBlock();
+                    gameState.fallingObject = spawnFallingObject();
                 }
             };
 
