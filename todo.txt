@@ -1,6 +1,5 @@
 test:
 * clock
-* engine
 * game
 * inputListener
 * renderer?
@@ -11,5 +10,4 @@ test:
 * keyboardInputSource
 
 write:
-* engine.tryToRotateFallingObject
 * renderer

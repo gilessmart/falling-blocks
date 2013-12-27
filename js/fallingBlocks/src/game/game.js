@@ -29,7 +29,9 @@ fallingBlocks.game.game = function(canvas, inputListener, settings) {
     }
 
     inputListener.onDirectionStart = function(direction){
-        clock.stop();
+        if (direction === fallingBlocks.game.directions.down) {
+            clock.stop();
+        }
         engine.tryToMoveFallingObject(direction);
     };
 
@@ -38,7 +40,9 @@ fallingBlocks.game.game = function(canvas, inputListener, settings) {
     };
 
     inputListener.onDirectionComplete = function() {
-        clock.start();
+        if (!clock.isRunning()) {
+            clock.start();
+        }
     };
 
     inputListener.onRotation = function(rotationDirection){

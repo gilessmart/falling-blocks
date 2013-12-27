@@ -1,5 +1,5 @@
 fallingBlocks.game.engine = function (gameState){
-    function areLocationsAvailable(locations) {
+    function areLocationsAvailable (locations) {
         return locations.every(function (location) {
             return gameState.landedBlocks.isLocationAvailable(location);
         });
@@ -10,7 +10,7 @@ fallingBlocks.game.engine = function (gameState){
         return areLocationsAvailable(translatedFallingBlockLocations);
     }
 
-    function canRotateObjectInDirection(direction) {
+    function canRotateObjectInDirection (direction) {
         var rotatedFallingBlockLocations = gameState.fallingObject.getRotatedBlockLocations(direction);
         return areLocationsAvailable(rotatedFallingBlockLocations);
     }

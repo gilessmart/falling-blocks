@@ -1,4 +1,4 @@
 fallingBlocks.game.rotations = {
-    anticlockwise: {},
-    clockwise: {}
+    anticlockwise: 1,
+    clockwise: 2
 };

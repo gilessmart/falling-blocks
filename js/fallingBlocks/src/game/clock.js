@@ -1,5 +1,6 @@
 fallingBlocks.game.clock = function(interval){
-    var intervalId;
+    var intervalId,
+        running = false;
 
     return {
         start: function () {
@@ -8,10 +9,17 @@ fallingBlocks.game.clock = function(interval){
             intervalId = setInterval(function () {
                 me.onTick();
             }, interval);
+
+            running = true;
         },
 
         stop: function () {
             clearInterval(intervalId);
+            running = false;
+        },
+
+        isRunning: function () {
+            return running;
         },
 
         onTick: function () {}
