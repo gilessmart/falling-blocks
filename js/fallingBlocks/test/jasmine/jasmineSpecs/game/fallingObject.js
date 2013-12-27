@@ -30,15 +30,15 @@ describe('fallingObject', function () {
                     { x: 1, y: 1 }
                 ]
             },
-            initialPosition = { x: 1, y: 9 },
+            initialPosition = { x: 10, y: 10 },
             fallingBlock = fallingBlocks.game.fallingObject(definition, initialPosition);
 
         fallingBlock.move(fallingBlocks.game.directions.down);
         expect(fallingBlock.getBlockLocations()).toEqual([
-            { x: 0, y: 8 },
-            { x: 1, y: 8 },
-            { x: 2, y: 8 },
-            { x: 1, y: 9 }
+            { x: 9, y: 9 },
+            { x: 10, y: 9 },
+            { x: 11, y: 9 },
+            { x: 10, y: 10 }
         ]);
     });
 
@@ -52,15 +52,15 @@ describe('fallingObject', function () {
                     { x: 1, y: 1 }
                 ]
             },
-            initialPosition = { x: 1, y: 9 },
+            initialPosition = { x: 10, y: 10 },
             fallingBlock = fallingBlocks.game.fallingObject(definition, initialPosition);
 
         fallingBlock.rotate(fallingBlocks.game.rotations.anticlockwise);
         expect(fallingBlock.getBlockLocations()).toEqual([
-            { x: 1, y: 8 },
-            { x: 1, y: 9 },
-            { x: 1, y: 10 },
-            { x: 0, y: 9 }
+            { x: 10, y: 9 },
+            { x: 10, y: 10 },
+            { x: 10, y: 11 },
+            { x: 9, y: 10 }
         ]);
     });
 
@@ -74,15 +74,15 @@ describe('fallingObject', function () {
                     { x: 1, y: 1 }
                 ]
             },
-            initialPosition = { x: 1, y: 9 },
+            initialPosition = { x: 10, y: 10 },
             fallingBlock = fallingBlocks.game.fallingObject(definition, initialPosition);
 
         fallingBlock.rotate(fallingBlocks.game.rotations.clockwise);
         expect(fallingBlock.getBlockLocations()).toEqual([
-            { x: 1, y: 10 },
-            { x: 1, y: 9 },
-            { x: 1, y: 8 },
-            { x: 2, y: 9 }
+            { x: 10, y: 11 },
+            { x: 10, y: 10 },
+            { x: 10, y: 9 },
+            { x: 11, y: 10 }
         ]);
     });
 });

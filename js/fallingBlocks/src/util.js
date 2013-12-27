@@ -30,6 +30,10 @@ fallingBlocks.util = {
         }
 
         return false;
+    },
+
+    mod: function (n, divisor) {
+        return ((n % divisor) + divisor) % divisor;
     }
 };
 

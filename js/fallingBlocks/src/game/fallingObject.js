@@ -2,23 +2,26 @@ fallingBlocks.game.fallingObject = function (definition, initialCentreLocation) 
     var quarterTurns = 0,
         centreLocation = initialCentreLocation;
 
+    function getTranslatedOffsets () {
+        var transform = fallingBlocks.game.transform();
+
+        // translate centre offset to origin
+        transform.translate(definition.centreOffset.x * -1, definition.centreOffset.y * -1);
+        // rotate
+        transform.rotateQuarterTurns(quarterTurns);
+
+        return definition.blockOffsets.map(function (offset) {
+            return transform.getTransformedLocation(offset);
+        });
+    }
+
     return {
         getBlockLocations: function () {
-            return definition.blockOffsets.map(function (offset) {
-                var transform = fallingBlocks.game.transform(),
-                    relativeOffset = {
-                        x: 0 - definition.centreOffset.x,
-                        y: 0 - definition.centreOffset.y
-                    };
-
-                // move to centre location
-                transform.translate(centreLocation.x - definition.centreOffset.x, centreLocation.y - definition.centreOffset.y);
-                // rotate
-                transform.rotateQuarterTurns(quarterTurns);
-                // move by offset relative to centre offset
-                //transform.translate(relativeOffset.x, relativeOffset.y);
-
-                return transform.getTransformedLocation(offset);
+            return getTranslatedOffsets().map(function (offset) {
+                return {
+                    x: offset.x + centreLocation.x,
+                    y: offset.y + centreLocation.y
+                };
             });
         },
 
