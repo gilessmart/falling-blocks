@@ -9,18 +9,18 @@ describe('fallingObject', function () {
                     { x: 1, y: 1 }
                 ]
             },
-            initialPosition = { x: 1, y: 9 },
+            initialPosition = { x: 10, y: 10 },
             fallingBlock = fallingBlocks.game.fallingObject(definition, initialPosition);
 
         expect(fallingBlock.getBlockLocations()).toEqual([
-            { x: 0, y: 9 },
-            { x: 1, y: 9 },
-            { x: 2, y: 9 },
-            { x: 1, y: 10 }
+            { x: 9, y: 10 },
+            { x: 10, y: 10 },
+            { x: 11, y: 10 },
+            { x: 10, y: 11 }
         ]);
     });
 
-    it('returns positions of falling object blocks after move', function () {
+    it('returns positions of falling object blocks after moving down', function () {
         var definition = {
                 centreOffset: { x: 1, y: 0 },
                 blockOffsets: [
@@ -33,12 +33,12 @@ describe('fallingObject', function () {
             initialPosition = { x: 1, y: 9 },
             fallingBlock = fallingBlocks.game.fallingObject(definition, initialPosition);
 
-        fallingBlock.move(5, 5);
+        fallingBlock.move(fallingBlocks.game.directions.down);
         expect(fallingBlock.getBlockLocations()).toEqual([
-            { x: 5, y: 14 },
-            { x: 6, y: 14 },
-            { x: 7, y: 14 },
-            { x: 6, y: 15 }
+            { x: 0, y: 8 },
+            { x: 1, y: 8 },
+            { x: 2, y: 8 },
+            { x: 1, y: 9 }
         ]);
     });
 

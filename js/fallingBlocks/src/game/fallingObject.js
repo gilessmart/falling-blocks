@@ -4,13 +4,20 @@ fallingBlocks.game.fallingObject = function (definition, initialCentreLocation) 
 
     return {
         getBlockLocations: function () {
-            var transform = fallingBlocks.game.transform();
-
-            transform.translate(centreLocation.x, centreLocation.y);
-            transform.rotateQuarterTurns(quarterTurns);
-            transform.translate(definition.centreOffset.x, definition.centreOffset.y);
-
             return definition.blockOffsets.map(function (offset) {
+                var transform = fallingBlocks.game.transform(),
+                    relativeOffset = {
+                        x: 0 - definition.centreOffset.x,
+                        y: 0 - definition.centreOffset.y
+                    };
+
+                // move to centre location
+                transform.translate(centreLocation.x - definition.centreOffset.x, centreLocation.y - definition.centreOffset.y);
+                // rotate
+                transform.rotateQuarterTurns(quarterTurns);
+                // move by offset relative to centre offset
+                //transform.translate(relativeOffset.x, relativeOffset.y);
+
                 return transform.getTransformedLocation(offset);
             });
         },
@@ -26,7 +33,7 @@ fallingBlocks.game.fallingObject = function (definition, initialCentreLocation) 
                     break;
 
                 case fallingBlocks.game.directions.down:
-                    centreLocation.y += 1;
+                    centreLocation.y -= 1;
                     break;
             }
         },
