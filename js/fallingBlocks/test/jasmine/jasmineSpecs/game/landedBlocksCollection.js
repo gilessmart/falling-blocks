@@ -25,6 +25,44 @@ describe('landedBlocksCollection', function () {
         expect(landedBlocks.isLocationAllowable({ x: 0, y: 4 })).toBe(true);
         expect(landedBlocks.isLocationAllowable({ x: 0, y: 5 })).toBe(true);
 
+        // values of y >= rows are allowable
+        expect(landedBlocks.isLocationAllowable({ x: 0, y: 11 })).toBe(true);
+
+    });
+
+    it('can determine whether a location is available', function () {
+        var landedBlocks = fallingBlocks.game.landedBlocksCollection(5, 10),
+            newLocations = [
+                { x: 0, y: 0 },
+                { x: 2, y: 0 },
+                { x: 4, y: 0 },
+                { x: 1, y: 1 },
+                { x: 3, y: 1 }
+            ];
+
+        landedBlocks.addLocations(newLocations);
+
+        // occupied locations are not available
+        expect(landedBlocks.isLocationAvailable({ x: 0, y: 0 })).toBe(false);
+        expect(landedBlocks.isLocationAvailable({ x: 2, y: 0 })).toBe(false);
+        expect(landedBlocks.isLocationAvailable({ x: 4, y: 0 })).toBe(false);
+        expect(landedBlocks.isLocationAvailable({ x: 1, y: 1 })).toBe(false);
+        expect(landedBlocks.isLocationAvailable({ x: 3, y: 1 })).toBe(false);
+
+        // negative values of x and y are not available
+        expect(landedBlocks.isLocationAvailable({ x: -1, y: 0  })).toBe(false);
+        expect(landedBlocks.isLocationAvailable({ x: 0, y: -1  })).toBe(false);
+
+        // values of x >= columns are not available
+        expect(landedBlocks.isLocationAvailable({ x: 5, y: 0 })).toBe(false);
+
+        // other locations are available
+        expect(landedBlocks.isLocationAvailable({ x: 1, y: 0 })).toBe(true);
+        expect(landedBlocks.isLocationAvailable({ x: 3, y: 0 })).toBe(true);
+        expect(landedBlocks.isLocationAvailable({ x: 0, y: 1 })).toBe(true);
+        expect(landedBlocks.isLocationAvailable({ x: 2, y: 1 })).toBe(true);
+        expect(landedBlocks.isLocationAvailable({ x: 4, y: 1 })).toBe(true);
+        expect(landedBlocks.isLocationAvailable({ x: 0, y: 11 })).toBe(true);
     });
 
     it('marks added locations as occupied', function () {

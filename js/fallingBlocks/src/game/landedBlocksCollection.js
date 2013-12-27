@@ -21,6 +21,11 @@ fallingBlocks.game.landedBlocksCollection = function(columns, rows) {
                     && location.y >= 0;
             },
 
+            isLocationAvailable: function (location) {
+                return this.isLocationAllowable(location)
+                    && !this.isLocationOccupied(location);
+            },
+
             addLocations: function (blockLocations) {
                 landedBlockLocations = landedBlockLocations.concat(blockLocations);
             },

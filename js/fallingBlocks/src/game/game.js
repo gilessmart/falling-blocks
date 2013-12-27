@@ -2,7 +2,8 @@ fallingBlocks.game.game = function(canvas, inputListener, settings) {
     var clock = fallingBlocks.game.clock(settings.dropInterval),
         gameState = {
             landedBlocks: fallingBlocks.game.landedBlocksCollection(settings.columns, settings.rows),
-            fallingObject: spawnFallingObject()
+            fallingObject: spawnFallingObject(),
+            score: 0
         },
         engine,
         renderer;

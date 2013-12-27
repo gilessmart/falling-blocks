@@ -1,37 +1,18 @@
 fallingBlocks.game.engine = function (gameState){
-    function getTranslatedLocation(location, direction) {
-        var translatedLocation = {
-            x: location.x,
-            y: location.y
-        };
-
-        switch(direction) {
-            case fallingBlocks.game.directions.left:
-                translatedLocation.x -= 1;
-                break;
-
-            case fallingBlocks.game.directions.right:
-                translatedLocation.x += 1;
-                break;
-
-            case fallingBlocks.game.directions.down:
-                translatedLocation.y += 1;
-                break;
-        }
-
-        return translatedLocation;
+    function areLocationsAvailable(locations) {
+        return locations.every(function (location) {
+            return gameState.landedBlocks.isLocationAvailable(location);
+        });
     }
 
     function canMoveObjectInDirection (direction) {
-        var translatedFallingBlockLocations = gameState.fallingObject.getBlockLocations()
-            .map(function (location) {
-                return getTranslatedLocation(location, direction);
-            });
+        var translatedFallingBlockLocations = gameState.fallingObject.getTranslatedBlockLocations(direction);
+        return areLocationsAvailable(translatedFallingBlockLocations);
+    }
 
-        return translatedFallingBlockLocations.every(function(translatedFallingBlockLocation){
-            return gameState.landedBlocks.isLocationAllowable(translatedFallingBlockLocation)
-                && !gameState.landedBlocks.isLocationOccupied(translatedFallingBlockLocation);
-        });
+    function canRotateObjectInDirection(direction) {
+        var rotatedFallingBlockLocations = gameState.fallingObject.getRotatedBlockLocations(direction);
+        return areLocationsAvailable(rotatedFallingBlockLocations);
     }
 
     return {
@@ -56,7 +37,10 @@ fallingBlocks.game.engine = function (gameState){
         },
 
         tryToRotateFallingObject: function (rotationDirection) {
-
+            if (canRotateObjectInDirection(rotationDirection)) {
+                gameState.fallingObject.rotate(rotationDirection);
+                this.onUpdated();
+            }
         },
 
         onUpdated: function () {},

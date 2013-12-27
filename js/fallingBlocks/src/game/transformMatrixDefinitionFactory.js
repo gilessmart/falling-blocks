@@ -1,34 +1,42 @@
 fallingBlocks.game.transformMatrixDefinitionFactory = {
     getQuarterTurns: function (quarterTurns) {
+        var result;
+
         switch (fallingBlocks.util.mod(quarterTurns, 4)) {
             case 0:
-                return [
+                result = [
                     [ 1, 0, 0 ],
                     [ 0, 1, 0 ],
                     [ 0, 0, 1 ]
                 ];
+                break;
 
             case 1:
-                return [
+                result = [
                     [ 0, -1, 0 ],
                     [ 1, 0, 0 ],
                     [ 0, 0, 1 ]
                 ];
+                break;
 
             case 2:
-                return [
+                result = [
                     [ -1, 0, 0 ],
                     [ 0, -1, 0 ],
                     [ 0, 0, 1 ]
                 ];
+                break;
 
             case 3:
-                return [
+                result = [
                     [ 0, 1, 0 ],
                     [ -1, 0, 0 ],
                     [ 0, 0, 1 ]
                 ];
+                break;
         }
+
+        return result;
     },
 
     getTranslation: function(x, y){

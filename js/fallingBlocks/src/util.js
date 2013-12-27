@@ -32,8 +32,8 @@ fallingBlocks.util = {
         return false;
     },
 
+    /// A modulo operation that handles a negative input value
     mod: function (n, divisor) {
         return ((n % divisor) + divisor) % divisor;
     }
 };
-
