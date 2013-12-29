@@ -1,3 +1,6 @@
+var fallingBlocks = fallingBlocks || {};
+fallingBlocks.game = fallingBlocks.game || {};
+
 fallingBlocks.util = {
     getRandomElement: function (arr) {
         return arr[ Math.floor( Math.random() * arr.length ) ];

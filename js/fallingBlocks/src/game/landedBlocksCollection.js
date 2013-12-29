@@ -1,3 +1,6 @@
+var fallingBlocks = fallingBlocks || {};
+fallingBlocks.game = fallingBlocks.game || {};
+
 fallingBlocks.game.landedBlocksCollection = function(columns, rows) {
     var landedBlockLocations = [],
         me = {

@@ -1,3 +1,6 @@
+var fallingBlocks = fallingBlocks || {};
+fallingBlocks.game = fallingBlocks.game || {};
+
 fallingBlocks.game.clock = function(interval){
     var intervalId,
         running = false;

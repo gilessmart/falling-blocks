@@ -1,3 +1,6 @@
+var fallingBlocks = fallingBlocks || {};
+fallingBlocks.game = fallingBlocks.game || {};
+
 fallingBlocks.game.transformMatrixFactory = {
     getQuarterTurns: function(quarterTurns){
         var definition = fallingBlocks.game.transformMatrixDefinitionFactory.getQuarterTurns(quarterTurns);

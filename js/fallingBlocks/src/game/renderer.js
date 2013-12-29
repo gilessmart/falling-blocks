@@ -1,3 +1,3 @@
-/**
- * Created by Giles on 18/12/13.
- */
+var fallingBlocks = fallingBlocks || {};
+fallingBlocks.game = fallingBlocks.game || {};
+

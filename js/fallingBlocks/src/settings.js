@@ -1,6 +1,6 @@
-/**
- * Created by Giles on 19/12/13.
- */
+var fallingBlocks = fallingBlocks || {};
+fallingBlocks.game = fallingBlocks.game || {};
+
 fallingBlocks.settings = {
     defaultGameSettings: {
         rows: 12,

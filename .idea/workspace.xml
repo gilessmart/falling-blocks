@@ -1,15 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6aa69113-de12-4890-bde4-45998ff47402" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/fallingBlocks/test/jasmine/jasmineSpecs/game/engine.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/fallingBlocks/test/jasmine/jasmineSpecs/game/game.js" />
+    <list default="true" id="6aa69113-de12-4890-bde4-45998ff47402" name="Default" comment="tested the engine&#10;">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" />
+      <change type="DELETED" beforePath="D:\Documents\code\javascript\FallingBlocks\js\fallingBlocks\src\namespaces.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\Documents\code\javascript\FallingBlocks\js\fallingBlocks\test\karma\karma.conf.js" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/fallingBlocks/test/jasmine/SpecRunner.html" afterPath="$PROJECT_DIR$/js/fallingBlocks/test/jasmine/SpecRunner.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/fallingBlocks/src/game/clock.js" afterPath="$PROJECT_DIR$/js/fallingBlocks/src/game/clock.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/fallingBlocks/src/game/directions.js" afterPath="$PROJECT_DIR$/js/fallingBlocks/src/game/directions.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/fallingBlocks/src/game/engine.js" afterPath="$PROJECT_DIR$/js/fallingBlocks/src/game/engine.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/fallingBlocks/src/fallingBlocks.js" afterPath="$PROJECT_DIR$/js/fallingBlocks/src/fallingBlocks.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/fallingBlocks/src/game/fallingObject.js" afterPath="$PROJECT_DIR$/js/fallingBlocks/src/game/fallingObject.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/fallingBlocks/src/game/game.js" afterPath="$PROJECT_DIR$/js/fallingBlocks/src/game/game.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/fallingBlocks/test/jasmine/jasmineSpecs/game/game.js" afterPath="$PROJECT_DIR$/js/fallingBlocks/test/jasmine/jasmineSpecs/game/game.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/fallingBlocks/src/game/inputListener.js" afterPath="$PROJECT_DIR$/js/fallingBlocks/src/game/inputListener.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/fallingBlocks/src/keyboardInputSource.js" afterPath="$PROJECT_DIR$/js/fallingBlocks/src/keyboardInputSource.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/fallingBlocks/src/game/landedBlocksCollection.js" afterPath="$PROJECT_DIR$/js/fallingBlocks/src/game/landedBlocksCollection.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/fallingBlocks/src/game/renderer.js" afterPath="$PROJECT_DIR$/js/fallingBlocks/src/game/renderer.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/fallingBlocks/src/game/rotations.js" afterPath="$PROJECT_DIR$/js/fallingBlocks/src/game/rotations.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/todo.txt" afterPath="$PROJECT_DIR$/todo.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/fallingBlocks/src/settings.js" afterPath="$PROJECT_DIR$/js/fallingBlocks/src/settings.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/fallingBlocks/src/game/transform.js" afterPath="$PROJECT_DIR$/js/fallingBlocks/src/game/transform.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/fallingBlocks/src/game/transformMatrix.js" afterPath="$PROJECT_DIR$/js/fallingBlocks/src/game/transformMatrix.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/fallingBlocks/src/game/transformMatrixDefinitionFactory.js" afterPath="$PROJECT_DIR$/js/fallingBlocks/src/game/transformMatrixDefinitionFactory.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/fallingBlocks/src/game/transformMatrixFactory.js" afterPath="$PROJECT_DIR$/js/fallingBlocks/src/game/transformMatrixFactory.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/fallingBlocks/src/game/transformVector.js" afterPath="$PROJECT_DIR$/js/fallingBlocks/src/game/transformVector.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/fallingBlocks/src/util.js" afterPath="$PROJECT_DIR$/js/fallingBlocks/src/util.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="FallingBlocks.iws" />
@@ -21,6 +37,9 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/FallingBlocks$karma_conf_js.coverage" NAME="karma.conf.js Coverage Results" MODIFIED="1388190911891" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="KarmaJavaScriptTestRunnerCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+  </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
@@ -33,46 +52,64 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="engine.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/fallingBlocks/src/game/engine.js">
+      <file leaf-file-name="inputListener.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/fallingBlocks/src/game/inputListener.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="33" selection-start="930" selection-end="930" vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="952">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="884">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="todo.txt" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/todo.txt">
+      <file leaf-file-name="landedBlocksCollection.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/fallingBlocks/src/game/landedBlocksCollection.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="0" selection-start="186" selection-end="186" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="323">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1887">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="engine.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/fallingBlocks/test/jasmine/jasmineSpecs/game/engine.js">
+      <file leaf-file-name="renderer.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/fallingBlocks/src/game/renderer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="72" column="74" selection-start="2634" selection-end="2634" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1445">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="153">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="game.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/fallingBlocks/src/game/game.js">
+      <file leaf-file-name="transformMatrix.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/fallingBlocks/src/game/transformMatrix.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="17" selection-start="373" selection-end="373" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1428">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="816">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="clock.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/fallingBlocks/src/game/clock.js">
+      <file leaf-file-name="karma.conf.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/fallingBlocks/karma.conf.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="28" selection-start="405" selection-end="405" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="561">
+            <state line="18" column="28" selection-start="428" selection-end="428" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1343">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="transformMatrixFactory.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/fallingBlocks/src/game/transformMatrixFactory.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="527">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="transformVector.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/fallingBlocks/src/game/transformVector.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="408">
               <folding />
             </state>
           </provider>
@@ -81,7 +118,25 @@
       <file leaf-file-name="game.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/fallingBlocks/test/jasmine/jasmineSpecs/game/game.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="110" selection-start="141" selection-end="141" vertical-scroll-proportion="0.03046595" vertical-offset="0" max-vertical-offset="558">
+            <state line="7" column="0" selection-start="259" selection-end="259" vertical-scroll-proportion="0.22928709" vertical-offset="0" max-vertical-offset="519">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fallingBlocks.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/fallingBlocks/src/fallingBlocks.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="272">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="keyboardInputSource.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/fallingBlocks/src/keyboardInputSource.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1445">
               <folding />
             </state>
           </provider>
@@ -108,25 +163,35 @@
       <list>
         <option value="$PROJECT_DIR$/js/fallingBlocks/test/jasmine/jasmineSpecs/transform.js" />
         <option value="$PROJECT_DIR$/js/fallingBlocks/test/jasmine/jasmineSpecs/landedBlocksCollection.js" />
-        <option value="$PROJECT_DIR$/js/fallingBlocks/src/game/directions.js" />
         <option value="$PROJECT_DIR$/js/fallingBlocks/src/game/fallingBlock.js" />
-        <option value="$PROJECT_DIR$/js/fallingBlocks/src/settings.js" />
         <option value="$PROJECT_DIR$/js/fallingBlocks/test/jasmine/jasmineSpecs/game/transformMatrixDefinitionFactory.js" />
         <option value="$PROJECT_DIR$/js/fallingBlocks/test/jasmine/jasmineSpecs/util.js" />
-        <option value="$PROJECT_DIR$/js/fallingBlocks/src/util.js" />
-        <option value="$PROJECT_DIR$/js/fallingBlocks/src/game/transformMatrixDefinitionFactory.js" />
-        <option value="$PROJECT_DIR$/js/fallingBlocks/src/game/fallingObject.js" />
         <option value="$PROJECT_DIR$/js/fallingBlocks/test/jasmine/jasmineSpecs/game/fallingObject.js" />
-        <option value="$PROJECT_DIR$/js/fallingBlocks/src/game/landedBlocksCollection.js" />
         <option value="$PROJECT_DIR$/js/fallingBlocks/test/jasmine/jasmineSpecs/game/landedBlocksCollection.js" />
-        <option value="$PROJECT_DIR$/js/fallingBlocks/src/game/engine.js" />
-        <option value="$PROJECT_DIR$/js/fallingBlocks/test/jasmine/SpecRunner.html" />
-        <option value="$PROJECT_DIR$/js/fallingBlocks/src/game/rotations.js" />
         <option value="$PROJECT_DIR$/js/fallingBlocks/test/jasmine/jasmineSpecs/game/engine.js" />
         <option value="$PROJECT_DIR$/todo.txt" />
+        <option value="$PROJECT_DIR$/js/fallingBlocks/test/karma/karma.conf.js" />
+        <option value="$PROJECT_DIR$/js/fallingBlocks/karma.conf.js" />
         <option value="$PROJECT_DIR$/js/fallingBlocks/test/jasmine/jasmineSpecs/game/game.js" />
-        <option value="$PROJECT_DIR$/js/fallingBlocks/src/game/game.js" />
+        <option value="$PROJECT_DIR$/js/fallingBlocks/test/jasmine/SpecRunner.html" />
         <option value="$PROJECT_DIR$/js/fallingBlocks/src/game/clock.js" />
+        <option value="$PROJECT_DIR$/js/fallingBlocks/src/game/directions.js" />
+        <option value="$PROJECT_DIR$/js/fallingBlocks/src/fallingBlocks.js" />
+        <option value="$PROJECT_DIR$/js/fallingBlocks/src/game/engine.js" />
+        <option value="$PROJECT_DIR$/js/fallingBlocks/src/game/fallingObject.js" />
+        <option value="$PROJECT_DIR$/js/fallingBlocks/src/game/game.js" />
+        <option value="$PROJECT_DIR$/js/fallingBlocks/src/game/inputListener.js" />
+        <option value="$PROJECT_DIR$/js/fallingBlocks/src/game/landedBlocksCollection.js" />
+        <option value="$PROJECT_DIR$/js/fallingBlocks/src/game/renderer.js" />
+        <option value="$PROJECT_DIR$/js/fallingBlocks/src/game/rotations.js" />
+        <option value="$PROJECT_DIR$/js/fallingBlocks/src/game/transform.js" />
+        <option value="$PROJECT_DIR$/js/fallingBlocks/src/game/transformMatrix.js" />
+        <option value="$PROJECT_DIR$/js/fallingBlocks/src/game/transformMatrixDefinitionFactory.js" />
+        <option value="$PROJECT_DIR$/js/fallingBlocks/src/game/transformMatrixFactory.js" />
+        <option value="$PROJECT_DIR$/js/fallingBlocks/src/game/transformVector.js" />
+        <option value="$PROJECT_DIR$/js/fallingBlocks/src/keyboardInputSource.js" />
+        <option value="$PROJECT_DIR$/js/fallingBlocks/src/settings.js" />
+        <option value="$PROJECT_DIR$/js/fallingBlocks/src/util.js" />
       </list>
     </option>
   </component>
@@ -152,10 +217,13 @@
           <State>
             <id>JavaScript</id>
           </State>
+          <State>
+            <id>JavaScript function metricsJavaScript</id>
+          </State>
         </expanded-state>
         <selected-state>
           <State>
-            <id>JSCheckFunctionSignatures</id>
+            <id>JavaScript function metricsJavaScript</id>
           </State>
         </selected-state>
       </profile-state>
@@ -187,7 +255,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -235,10 +302,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="fallingBlocks" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -408,12 +471,13 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
+    <property name="options.lastSelected" value="Errors" />
     <property name="recentsLimit" value="5" />
     <property name="last_opened_file_path" value="C:/Program Files/nodejs/node.exe" />
     <property name="restartRequiresConfirmation" value="true" />
@@ -434,30 +498,7 @@
       <recent name="D:\Documents\code\js\FallingBlocks\js\fallingBlocks\test\jsTestRunner" />
     </key>
   </component>
-  <component name="RunManager" selected="JsTestDriver.transformTests.test hello">
-    <configuration default="false" name="Asserts.js" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true" temporary="true" uri="jar://$APPLICATION_HOME_DIR$/plugins/JsTestDriver/lib/JsTestDriver-plugin.jar!/com/google/jstestdriver/idea/assertFramework/jstd/jsSrc/Asserts.js">
-      <RunnerSettings RunnerId="JavascriptDebugRunner" />
-      <ConfigurationWrapper RunnerId="JavascriptDebugRunner" />
-      <method />
-    </configuration>
-    <configuration default="false" name="TestCase.js" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true" temporary="true" uri="jar://$APPLICATION_HOME_DIR$/plugins/JsTestDriver/lib/JsTestDriver-plugin.jar!/com/google/jstestdriver/idea/assertFramework/jstd/jsSrc/TestCase.js">
-      <RunnerSettings RunnerId="JavascriptDebugRunner" />
-      <ConfigurationWrapper RunnerId="JavascriptDebugRunner" />
-      <method />
-    </configuration>
-    <configuration default="false" name="transformTests.test hello" type="JSTestDriver:ConfigurationType" factoryName="JsTestDriver" temporary="true">
-      <setting name="configLocationType" value="TEST_METHOD" />
-      <setting name="configType" value="FILE_PATH" />
-      <setting name="settingsFile" value="$PROJECT_DIR$/js/fallingBlocks/test/jsTestRunner/fallingBlocks.jstd" />
-      <setting name="jsFile" value="$PROJECT_DIR$/js/fallingBlocks/test/jsTestRunner/testCases/transformTests.js" />
-      <setting name="testCase" value="transformTests" />
-      <setting name="testMethod" value="test hello" />
-      <setting name="serverType" value="INTERNAL" />
-      <setting name="preferredDebugBrowser" value="CHROME" />
-      <RunnerSettings RunnerId="JstdDebugProgramRunner" />
-      <ConfigurationWrapper RunnerId="JstdDebugProgramRunner" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Karma.karma.conf.js">
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
       <option name="VMOptions" />
       <option name="arguments" />
@@ -545,24 +586,20 @@
       <ConfigurationWrapper RunnerId="JstdDebugProgramRunner" />
       <method />
     </configuration>
-    <configuration default="false" name="FallingBlocks Karma" type="JavaScriptTestRunnerKarma" factoryName="Karma" singleton="true" config-file="*.conf.js">
+    <configuration default="false" name="karma.conf.js" type="JavaScriptTestRunnerKarma" factoryName="Karma" singleton="true" config-file="$PROJECT_DIR$/js/fallingBlocks/karma.conf.js">
       <envs />
+      <RunnerSettings RunnerId="KarmaCoverageProgramRunner" />
+      <RunnerSettings RunnerId="KarmaJavaScriptTestRunnerDebug" />
+      <RunnerSettings RunnerId="KarmaJavaScriptTestRunnerRun" />
+      <ConfigurationWrapper RunnerId="KarmaCoverageProgramRunner" />
+      <ConfigurationWrapper RunnerId="KarmaJavaScriptTestRunnerDebug" />
+      <ConfigurationWrapper RunnerId="KarmaJavaScriptTestRunnerRun" />
       <method />
     </configuration>
-    <list size="5">
+    <list size="2">
       <item index="0" class="java.lang.String" itemvalue="JsTestDriver.FallingBlocks JsTestDriver" />
-      <item index="1" class="java.lang.String" itemvalue="Karma.FallingBlocks Karma" />
-      <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.Asserts.js" />
-      <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.TestCase.js" />
-      <item index="4" class="java.lang.String" itemvalue="JsTestDriver.transformTests.test hello" />
+      <item index="1" class="java.lang.String" itemvalue="Karma.karma.conf.js" />
     </list>
-    <recent_temporary>
-      <list size="3">
-        <item index="0" class="java.lang.String" itemvalue="JsTestDriver.transformTests.test hello" />
-        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.TestCase.js" />
-        <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.Asserts.js" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
   <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false" SSL_PROTOCOLS="all">
@@ -604,7 +641,11 @@
       <created>1388173408241</created>
       <updated>1388173408241</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="tested the engine">
+      <created>1388183955301</created>
+      <updated>1388183955301</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -631,22 +672,23 @@
     <frame x="-8" y="-8" width="1296" height="1010" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3201397" sideWeight="0.49960285" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32945284" sideWeight="0.49960223" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3247963" sideWeight="0.49960285" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24980111" sideWeight="0.6705471" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23351866" sideWeight="0.7240978" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4079602" sideWeight="0.6351452" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2366958" sideWeight="0.7240978" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.40745053" sideWeight="0.6351452" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32542372" sideWeight="0.50039715" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32669982" sideWeight="0.6443914" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32596043" sideWeight="0.24702145" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32596043" sideWeight="0.75297856" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="JsTestDriver Server" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27860695" sideWeight="0.37947494" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32542372" sideWeight="0.49960285" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32956383" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2759022" sideWeight="0.57836115" order="5" side_tool="false" content_ui="tabs" />
@@ -669,7 +711,8 @@
     <MESSAGE value="added tests for landedBlocksCollection; fixed bugs revealed by tests" />
     <MESSAGE value="tested fallingObject and corrected it" />
     <MESSAGE value="added getTranslatedLocations and getRotatedTranslations to fallingObject" />
-    <option name="LAST_COMMIT_MESSAGE" value="added getTranslatedLocations and getRotatedTranslations to fallingObject" />
+    <MESSAGE value="tested the engine" />
+    <option name="LAST_COMMIT_MESSAGE" value="tested the engine" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -684,38 +727,41 @@
           <line>7</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/js/fallingBlocks/src/game/transform.js</url>
-          <line>6</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="10" />
+      <option name="time" value="11" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/js/fallingBlocks/src/game/fallingObject.js">
+    <entry file="file://$PROJECT_DIR$/js/fallingBlocks/src/game/clock.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="18" selection-start="427" selection-end="427" vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="1054">
+        <state line="17" column="28" selection-start="405" selection-end="405" vertical-scroll-proportion="0.0" vertical-offset="289" max-vertical-offset="561">
           <folding />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/fallingBlocks/test/jasmine/jasmineSpecs/game/game.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="110" selection-start="141" selection-end="141" vertical-scroll-proportion="0.0" vertical-offset="17" max-vertical-offset="153">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/fallingBlocks/src/game/fallingObject.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="18" selection-start="427" selection-end="427" vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="1054" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/fallingBlocks/src/game/transform.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="8" selection-start="141" selection-end="141" vertical-scroll-proportion="0.0" vertical-offset="68" max-vertical-offset="544">
-          <folding />
-        </state>
+        <state line="4" column="8" selection-start="141" selection-end="141" vertical-scroll-proportion="0.0" vertical-offset="68" max-vertical-offset="544" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/fallingBlocks/src/game/transformMatrixDefinitionFactory.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="19" selection-start="344" selection-end="344" vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="1071">
-          <folding />
-        </state>
+        <state line="10" column="19" selection-start="344" selection-end="344" vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="1071" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/fallingBlocks/src/util.js">
@@ -741,44 +787,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/fallingBlocks/test/jasmine/jasmineSpecs/game/fallingObject.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="84" column="26" selection-start="3037" selection-end="3037" vertical-scroll-proportion="0.0" vertical-offset="1428" max-vertical-offset="1598">
-          <folding />
-        </state>
+        <state line="84" column="26" selection-start="3037" selection-end="3037" vertical-scroll-proportion="0.0" vertical-offset="1428" max-vertical-offset="1598" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/fallingBlocks/test/jasmine/SpecRunner.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="85" selection-start="1134" selection-end="1134" vertical-scroll-proportion="0.0" vertical-offset="323" max-vertical-offset="748">
-          <folding />
-        </state>
+        <state line="19" column="85" selection-start="1134" selection-end="1134" vertical-scroll-proportion="0.0" vertical-offset="323" max-vertical-offset="748" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/fallingBlocks/src/game/engine.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="0" selection-start="2083" selection-end="2083" vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="1224">
-          <folding />
-        </state>
+        <state line="58" column="0" selection-start="2083" selection-end="2083" vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="1224" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/todo.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="15" selection-start="40" selection-end="53" vertical-scroll-proportion="0.0" vertical-offset="68" max-vertical-offset="255">
-          <folding />
-        </state>
+        <state line="4" column="15" selection-start="40" selection-end="53" vertical-scroll-proportion="0.0" vertical-offset="68" max-vertical-offset="255" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/fallingBlocks/src/game/fallingObject.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="18" selection-start="856" selection-end="856" vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="1003">
-          <folding />
-        </state>
+        <state line="18" column="18" selection-start="856" selection-end="856" vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="1003" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/fallingBlocks/src/settings.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="42" selection-start="484" selection-end="484" vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="969">
-          <folding />
-        </state>
+        <state line="18" column="42" selection-start="484" selection-end="484" vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="969" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/fallingBlocks/src/game/game.js">
@@ -790,54 +824,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/fallingBlocks/test/jasmine/SpecRunner.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="64" selection-start="1472" selection-end="1472" vertical-scroll-proportion="0.0" vertical-offset="391" max-vertical-offset="731">
-          <folding />
-        </state>
+        <state line="23" column="64" selection-start="1472" selection-end="1472" vertical-scroll-proportion="0.0" vertical-offset="391" max-vertical-offset="731" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/fallingBlocks/test/jasmine/jasmineSpecs/game/fallingObject.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="28" selection-start="711" selection-end="711" vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="1598">
-          <folding />
-        </state>
+        <state line="18" column="28" selection-start="711" selection-end="711" vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="1598" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/fallingBlocks/test/jasmine/jasmineSpecs/game/transform.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="20" selection-start="228" selection-end="228" vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="1666">
-          <folding />
-        </state>
+        <state line="6" column="20" selection-start="228" selection-end="228" vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="1666" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/fallingBlocks/src/game/rotations.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="19" selection-start="19" selection-end="19" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="170">
-          <folding />
-        </state>
+        <state line="0" column="19" selection-start="19" selection-end="19" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="170" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/fallingBlocks/src/game/directions.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="19" selection-start="19" selection-end="19" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="187">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/fallingBlocks/src/game/renderer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="0" selection-start="41" selection-end="41" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="153" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/fallingBlocks/src/game/inputListener.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="833" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/fallingBlocks/src/game/directions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="19" selection-start="19" selection-end="19" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="575">
-          <folding />
-        </state>
+        <state line="0" column="19" selection-start="19" selection-end="19" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="187" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/fallingBlocks/test/jsTestRunner/fallingBlocks.jstd">
@@ -845,135 +852,35 @@
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="615" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/fallingBlocks/test/jasmine/jasmineSpecs/game/transformMatrixDefinitionFactory.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="20" selection-start="1113" selection-end="1113" vertical-scroll-proportion="0.67250437" vertical-offset="160" max-vertical-offset="731">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/fallingBlocks/src/util.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="0" selection-start="1270" selection-end="1270" vertical-scroll-proportion="0.0" vertical-offset="198" max-vertical-offset="765">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/fallingBlocks/src/fallingBlocks.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="550">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/fallingBlocks/test/jasmine/jasmineSpecs/util.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="54" selection-start="1083" selection-end="1083" vertical-scroll-proportion="0.6252189" vertical-offset="0" max-vertical-offset="571">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/fallingBlocks/test/jasmine/jasmineSpecs/game/transform.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="20" selection-start="228" selection-end="228" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1666">
-          <folding />
-        </state>
+        <state line="6" column="20" selection-start="228" selection-end="228" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1666" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/fallingBlocks/src/game/transform.js">
+    <entry file="file://$PROJECT_DIR$/js/fallingBlocks/test/jasmine/jasmineSpecs/game/engine.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="8" selection-start="141" selection-end="141" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="544">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/fallingBlocks/src/game/transformMatrixDefinitionFactory.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="0" selection-start="979" selection-end="979" vertical-scroll-proportion="0.0" vertical-offset="612" max-vertical-offset="1207">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/fallingBlocks/src/game/transformMatrix.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="0" selection-start="262" selection-end="262" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="765">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/fallingBlocks/src/game/transformMatrixFactory.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="550">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/fallingBlocks/src/game/transformVector.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="357">
+        <state line="72" column="74" selection-start="2634" selection-end="2634" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1445">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/fallingBlocks/test/jasmine/jasmineSpecs/game/landedBlocksCollection.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="64" column="47" selection-start="3109" selection-end="3109" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3128">
+        <state line="1" column="4" selection-start="53" selection-end="53" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3128">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/fallingBlocks/test/jasmine/jasmineSpecs/game/fallingObject.js">
+    <entry file="file://$PROJECT_DIR$/js/fallingBlocks/test/jasmine/jasmineSpecs/util.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="45" selection-start="890" selection-end="890" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2754">
+        <state line="1" column="4" selection-start="35" selection-end="35" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/fallingBlocks/src/settings.js">
+    <entry file="file://$PROJECT_DIR$/js/fallingBlocks/test/jasmine/jasmineSpecs/game/transformMatrixDefinitionFactory.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="17" selection-start="226" selection-end="412" vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="969">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/fallingBlocks/test/jasmine/SpecRunner.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="67" selection-start="2194" selection-end="2194" vertical-scroll-proportion="-13.961538" vertical-offset="198" max-vertical-offset="782">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/fallingBlocks/src/game/rotations.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="16" selection-start="71" selection-end="71" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="170">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/fallingBlocks/src/game/landedBlocksCollection.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="58" selection-start="907" selection-end="907" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1836">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/fallingBlocks/src/game/fallingObject.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="25" selection-start="614" selection-end="631" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1853">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/fallingBlocks/src/game/engine.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="33" selection-start="930" selection-end="930" vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="952">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/fallingBlocks/test/jasmine/jasmineSpecs/game/engine.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="72" column="74" selection-start="2634" selection-end="2634" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1445">
+        <state line="28" column="4" selection-start="899" selection-end="899" vertical-scroll-proportion="0.0" vertical-offset="199" max-vertical-offset="731">
           <folding />
         </state>
       </provider>
@@ -985,23 +892,163 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/fallingBlocks/src/game/game.js">
+    <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="17" selection-start="373" selection-end="373" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1428">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="816">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/fallingBlocks/test/jasmine/SpecRunner.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="0" selection-start="649" selection-end="649" vertical-scroll-proportion="0.302799" vertical-offset="0" max-vertical-offset="786">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/fallingBlocks/src/game/clock.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="28" selection-start="405" selection-end="405" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="561">
+        <state line="0" column="40" selection-start="0" selection-end="40" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="812">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/fallingBlocks/src/game/directions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="40" selection-start="40" selection-end="40" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="238">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/fallingBlocks/src/fallingBlocks.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="272">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/fallingBlocks/src/game/engine.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1003">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/fallingBlocks/src/game/fallingObject.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1904">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/fallingBlocks/src/game/game.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1496">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/fallingBlocks/src/game/inputListener.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="884">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/fallingBlocks/src/game/landedBlocksCollection.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1887">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/fallingBlocks/src/game/renderer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="153">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/fallingBlocks/src/game/rotations.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="533">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/fallingBlocks/src/game/transform.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="595">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/fallingBlocks/src/game/transformMatrix.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="816">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/fallingBlocks/src/game/transformMatrixDefinitionFactory.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1258">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/fallingBlocks/src/game/transformMatrixFactory.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="527">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/fallingBlocks/src/game/transformVector.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="408">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/fallingBlocks/src/keyboardInputSource.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1445">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/fallingBlocks/src/settings.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="969">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/fallingBlocks/src/util.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="11" selection-start="655" selection-end="655" vertical-scroll-proportion="0.35591134" vertical-offset="0" max-vertical-offset="816">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/fallingBlocks/karma.conf.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="28" selection-start="428" selection-end="428" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1343">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/fallingBlocks/test/jasmine/jasmineSpecs/game/fallingObject.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="44" column="4" selection-start="1500" selection-end="1500" vertical-scroll-proportion="0.33270678" vertical-offset="571" max-vertical-offset="2754">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/fallingBlocks/test/jasmine/jasmineSpecs/game/game.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="110" selection-start="141" selection-end="141" vertical-scroll-proportion="0.03046595" vertical-offset="0" max-vertical-offset="558">
+        <state line="7" column="0" selection-start="259" selection-end="259" vertical-scroll-proportion="0.22928709" vertical-offset="0" max-vertical-offset="519">
           <folding />
         </state>
       </provider>

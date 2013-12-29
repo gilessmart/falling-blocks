@@ -1,3 +1,6 @@
+var fallingBlocks = fallingBlocks || {};
+fallingBlocks.game = fallingBlocks.game || {};
+
 fallingBlocks.game.transform = function () {
     var matrix = fallingBlocks.game.transformMatrixFactory.getIdentity();
 

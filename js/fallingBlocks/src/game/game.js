@@ -1,8 +1,11 @@
+var fallingBlocks = fallingBlocks || {};
+fallingBlocks.game = fallingBlocks.game || {};
+
 fallingBlocks.game.game = function(canvas, inputListener, settings) {
     var clock = fallingBlocks.game.clock(settings.dropInterval),
         gameState = {
             landedBlocks: fallingBlocks.game.landedBlocksCollection(settings.columns, settings.rows),
-            fallingObject: spawnFallingObject(),
+            fallingObject: null,
             score: 0
         },
         engine,
@@ -12,10 +15,10 @@ fallingBlocks.game.game = function(canvas, inputListener, settings) {
         var fallingBlockDefinition = fallingBlocks.util.getRandomElement(settings.fallingBlockDefinitions),
             initialPosition = {
                 x: Math.floor(settings.columns / 2),
-                y: fallingBlockDefinition.centreOffset.y * -1
+                y: settings.rows + fallingBlockDefinition.centreOffset.y
             };
 
-        return fallingBlocks.game.fallingObject(fallingBlockDefinition, initialPosition);
+        gameState.fallingObject = fallingBlocks.game.fallingObject(fallingBlockDefinition, initialPosition);
     }
 
     function gameOver () {
@@ -54,20 +57,21 @@ fallingBlocks.game.game = function(canvas, inputListener, settings) {
     };
 
     return {
-        start: function(){
+        start: function () {
+            spawnFallingObject();
             engine = fallingBlocks.game.engine(gameState);
             renderer = fallingBlocks.game.renderer(canvas, gameState);
 
-            engine.onUpdated = function(){
+            engine.onUpdated = function () {
                 renderer.render();
             };
 
-            engine.onFallingBlockLanded = function(){
+            engine.onFallingBlockLanded = function () {
                 if (gameState.landedBlocks.isHighestBlockAbovePlayingArea()) {
                     gameOver();
                 }
                 else {
-                    gameState.fallingObject = spawnFallingObject();
+                    spawnFallingObject();
                 }
             };
 

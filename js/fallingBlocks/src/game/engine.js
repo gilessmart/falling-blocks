@@ -1,3 +1,6 @@
+var fallingBlocks = fallingBlocks || {};
+fallingBlocks.game = fallingBlocks.game || {};
+
 fallingBlocks.game.engine = function (gameState){
     function areLocationsAvailable (locations) {
         return locations.every(function (location) {
