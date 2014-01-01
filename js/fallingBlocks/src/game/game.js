@@ -31,21 +31,11 @@ fallingBlocks.game.game = function(canvas, inputListener, settings) {
         clock.start();
     }
 
-    inputListener.onDirectionStart = function(direction){
+    inputListener.onDirection = function(direction){
         if (direction === fallingBlocks.game.directions.down) {
-            clock.stop();
+            clock.restart();
         }
         engine.tryToMoveFallingObject(direction);
-    };
-
-    inputListener.onDirectionRepeat = function(direction){
-        engine.tryToMoveFallingObject(direction);
-    };
-
-    inputListener.onDirectionComplete = function() {
-        if (!clock.isRunning()) {
-            clock.start();
-        }
     };
 
     inputListener.onRotation = function(rotationDirection){
@@ -60,7 +50,13 @@ fallingBlocks.game.game = function(canvas, inputListener, settings) {
         start: function () {
             spawnFallingObject();
             engine = fallingBlocks.game.engine(gameState);
-            renderer = fallingBlocks.game.renderer(canvas, gameState);
+            renderer = fallingBlocks.game.renderer(
+                canvas.getContext('2d'),
+                canvas.offsetWidth,
+                canvas.offsetHeight,
+                gameState,
+                settings.spawnAreaRows,
+                settings.colours);
 
             engine.onUpdated = function () {
                 renderer.render();

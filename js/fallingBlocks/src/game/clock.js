@@ -21,6 +21,11 @@ fallingBlocks.game.clock = function(interval){
             running = false;
         },
 
+        restart: function () {
+            this.stop();
+            this.start();
+        },
+
         isRunning: function () {
             return running;
         },

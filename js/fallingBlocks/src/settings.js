@@ -6,6 +6,12 @@ fallingBlocks.settings = {
         rows: 12,
         columns: 25,
         dropInterval: 750,
+        spawnAreaRows: 5,
+        colours: {
+            landedBlock: '#333333',
+            background: '#F0F0F0',
+            fallingObject: '#666666'
+        },
         fallingBlockDefinitions: [
             {
                 centreOffset: { x: 1, y: 1 },

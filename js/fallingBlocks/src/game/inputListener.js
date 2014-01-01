@@ -1,46 +1,28 @@
 var fallingBlocks = fallingBlocks || {};
 fallingBlocks.game = fallingBlocks.game || {};
 
-fallingBlocks.game.inputListener = function(inputSource, repeatInterval){
-    var repeatIntervalId;
-
+fallingBlocks.game.inputListener = function (inputSource) {
     return {
-        startListening: function(){
+        startListening: function () {
             var me = this;
 
-            inputSource.onInputStart = function(input){
-                clearInterval(repeatIntervalId);
-
+            inputSource.onInput = function (input){
                 if (input.direction) {
-                    me.onDirectionStart(input.direction);
-
-                    repeatIntervalId = setInterval(function(){
-                        me.onDirectionStart(input.direction);
-                    }, repeatInterval);
+                    me.onDirection(input.direction);
                 }
                 else if (input.rotation){
                     me.onRotation(input.rotation)
                 }
             };
-
-            inputSource.onInputEnd = function(){
-                clearInterval(repeatIntervalId);
-                me.onDirectionComplete();
-            };
         },
 
-        stopListening: function(){
+        stopListening: function () {
             clearInterval(repeatIntervalId);
-            inputSource.onInput = function(){};
-            inputSource.onInputEnd = function(){};
+            inputSource.onInput = function () {};
         },
 
-        onDirectionStart: function(direction){},
+        onDirection: function (direction) {},
 
-        onDirectionRepeat: function(direction){},
-
-        onDirectionComplete: function(){},
-
-        onRotation: function(rotation){}
+        onRotation: function (rotation) {}
     };
 };

@@ -11,3 +11,5 @@ test:
 
 write:
 * renderer
+
+* implement pause/unpause

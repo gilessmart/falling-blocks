@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FallingBlocks integration test</title>
+</head>
+<body>
+    <canvas id="MyCanvas" width="500" height="500" tabindex="0"></canvas>
+
+    <script>
+        (function () {
+            var canvas = document.getElementById('MyCanvas'),
+                i = 0;
+
+            canvas.addEventListener('keydown', function (e) {
+                console.log(i);
+                i += 1;
+            });
+        })();
+    </script>
+</body>
+</html>

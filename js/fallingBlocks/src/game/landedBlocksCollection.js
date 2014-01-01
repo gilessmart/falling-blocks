@@ -12,6 +12,10 @@ fallingBlocks.game.landedBlocksCollection = function(columns, rows) {
                 return columns;
             },
 
+            getBlockLocations: function () {
+                return landedBlockLocations;
+            },
+
             isLocationOccupied: function (location){
                 return landedBlockLocations.some(function(landedBlockLocation){
                     return fallingBlocks.util.areEqual(landedBlockLocation, location);

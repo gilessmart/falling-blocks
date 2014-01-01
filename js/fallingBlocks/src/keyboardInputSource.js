@@ -3,8 +3,7 @@ fallingBlocks.game = fallingBlocks.game || {};
 
 fallingBlocks.keyboradInputSource = function(container, keyCodes){
     var me = {
-        onInputStart: function(input){},
-        onInputEnd: function(input){}
+        onInput: function(input){}
     };
 
     container.addEventListener('keydown', function(e){
@@ -12,21 +11,21 @@ fallingBlocks.keyboradInputSource = function(container, keyCodes){
             input;
 
         switch (key) {
-            case keyCodes.left:
+            case keyCodes.moveLeft:
                 input = {
-                    direction: fallingBlocks.game.direction.left
+                    direction: fallingBlocks.game.directions.left
                 };
                 break;
 
-            case keyCodes.right:
+            case keyCodes.moveRight:
                 input = {
-                    direction: fallingBlocks.game.direction.right
+                    direction: fallingBlocks.game.directions.right
                 };
                 break;
 
-            case keyCodes.down:
+            case keyCodes.moveDown:
                 input = {
-                    direction: fallingBlocks.game.direction.down
+                    direction: fallingBlocks.game.directions.down
                 };
                 break;
 
@@ -38,41 +37,13 @@ fallingBlocks.keyboradInputSource = function(container, keyCodes){
 
             case keyCodes.rotateAntiClockwise:
                 input = {
-                    rotation: fallingBlocks.game.direction.anticlockwise
+                    rotation: fallingBlocks.game.rotations.anticlockwise
                 };
                 break;
         }
 
         if (input)
-            me.onInputStart(input);
-    });
-
-    container.addEventListener('keyup', function(e){
-        var key = e.keyCode || e.which,
-            input;
-
-        switch (key) {
-            case keyCodes.left:
-                input = {
-                    direction: fallingBlocks.game.direction.left
-                };
-                break;
-
-            case keyCodes.right:
-                input = {
-                    direction: fallingBlocks.game.direction.right
-                };
-                break;
-
-            case keyCodes.down:
-                input = {
-                    direction: fallingBlocks.game.direction.down
-                };
-                break;
-        }
-
-        if (input)
-            me.onInputEnd(input);
+            me.onInput(input);
     });
 
     return me;
