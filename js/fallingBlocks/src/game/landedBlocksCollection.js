@@ -40,8 +40,9 @@ fallingBlocks.game.landedBlocksCollection = function(columns, rows) {
             removeRows: function (rowIndices) {
                 // remove rows in reverse index order
                 // otherwise the rowIndex could refer to the wrong row
-                // todo: implement a distinct check
-                rowIndices.sort().reverse().forEach(function (rowNumber) {
+                // todo: implement a distinct check?
+                var reverseOrderedRowIndices = fallingBlocks.util.sortNumbers(rowIndices).reverse();
+                reverseOrderedRowIndices.forEach(function (rowNumber) {
                     removeRow(rowNumber);
                     moveLocationsDown(getLocationsHigherThan(rowNumber));
                 });
@@ -88,7 +89,8 @@ fallingBlocks.game.landedBlocksCollection = function(columns, rows) {
         // splice items out of array in reverse order
         // otherwise the index of the item in the list could have been
         // changed by a previous splice
-        arrayIndices.sort().reverse().forEach(function (index) {
+        var reverseOrderedArrayIndices = fallingBlocks.util.sortNumbers(arrayIndices).reverse();
+        reverseOrderedArrayIndices.forEach(function (index) {
             landedBlockLocations.splice(index, 1);
         });
     }

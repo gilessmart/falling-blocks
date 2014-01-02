@@ -2,8 +2,7 @@ var fallingBlocks = fallingBlocks || {};
 fallingBlocks.game = fallingBlocks.game || {};
 
 fallingBlocks.game.clock = function(interval){
-    var intervalId,
-        running = false;
+    var intervalId;
 
     return {
         start: function () {
@@ -12,22 +11,15 @@ fallingBlocks.game.clock = function(interval){
             intervalId = setInterval(function () {
                 me.onTick();
             }, interval);
-
-            running = true;
         },
 
         stop: function () {
             clearInterval(intervalId);
-            running = false;
         },
 
         restart: function () {
             this.stop();
             this.start();
-        },
-
-        isRunning: function () {
-            return running;
         },
 
         onTick: function () {}

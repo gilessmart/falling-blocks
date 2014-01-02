@@ -38,5 +38,11 @@ fallingBlocks.util = {
     /// A modulo operation that handles a negative input value
     mod: function (n, divisor) {
         return ((n % divisor) + divisor) % divisor;
+    },
+
+    sortNumbers: function (numbers) {
+        return numbers.sort(function (a, b) {
+            return a > b ? 1 : a < b ? -1 : 0;
+        });
     }
 };

@@ -20,11 +20,6 @@
 
     <script src="../src/keyboardInputSource.js"></script>
     <script src="../src/game/inputListener.js"></script>
-
-    <script src="../src/settings.js"></script>
-    <script src="../src/game/game.js"></script>
-    <script src="../src/game/clock.js"></script>
-    <script src="../src/game/engine.js"></script>
 </head>
 <body>
     <canvas id="MyCanvas" width="500" height="500" tabindex="0"></canvas>
@@ -32,11 +27,29 @@
     <script>
         (function () {
             var myCanvas = document.getElementById('MyCanvas'),
-                inputSource = fallingBlocks.keyboradInputSource(myCanvas, fallingBlocks.settings.defaultKeyCodes),
-                inputListener = fallingBlocks.game.inputListener(inputSource),
-                game = fallingBlocks.game.game(myCanvas, inputListener, fallingBlocks.settings.defaultGameSettings);
+                keyCodes = {
+                    moveLeft: 37,
+                    moveRight: 39,
+                    moveDown: 40,
+                    rotateClockwise: 65,
+                    rotateAntiClockwise: 83
+                },
+                inputSource = fallingBlocks.keyboradInputSource(myCanvas, keyCodes),
+                inputListener = fallingBlocks.game.inputListener(inputSource);
 
-            game.start();
+            inputListenerTest.onDirection = function (direction) {
+                console.log(direction + ' direction started');
+            };
+
+            inputListenerTest.onDirectionRepeat = function (direction) {
+                console.log(direction + ' direction repeated');
+            };
+
+            inputListenerTest.onRotation = function (rotationDirection) {
+                console.log(rotationDirection + ' rotation');
+            };
+
+            inputListenerTest.startListening();
         })();
     </script>
 </body>

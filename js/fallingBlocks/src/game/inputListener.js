@@ -17,7 +17,6 @@ fallingBlocks.game.inputListener = function (inputSource) {
         },
 
         stopListening: function () {
-            clearInterval(repeatIntervalId);
             inputSource.onInput = function () {};
         },
 

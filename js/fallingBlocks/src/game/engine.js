@@ -29,7 +29,7 @@ fallingBlocks.game.engine = function (gameState){
 
                 var completeRowIndices = gameState.landedBlocks.getCompleteRowIndices();
 
-                if (completeRowIndices > 0) {
+                if (completeRowIndices.length > 0) {
                     gameState.landedBlocks.removeRows(completeRowIndices);
                     gameState.score += completeRowIndices.length;
                 }

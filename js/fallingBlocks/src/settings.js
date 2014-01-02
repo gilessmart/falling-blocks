@@ -3,8 +3,8 @@ fallingBlocks.game = fallingBlocks.game || {};
 
 fallingBlocks.settings = {
     defaultGameSettings: {
-        rows: 12,
-        columns: 25,
+        rows: 20,
+        columns: 10,
         dropInterval: 750,
         spawnAreaRows: 5,
         colours: {
@@ -51,7 +51,7 @@ fallingBlocks.settings = {
         moveLeft: 37,
         moveRight: 39,
         moveDown: 40,
-        rotateClockwise: 65,
-        rotateAntiClockwise: 83
+        rotateAntiClockwise: 65,
+        rotateClockwise: 83
     }
 };

@@ -2,7 +2,7 @@ test:
 * clock
 * game
 * inputListener
-* renderer?
+* renderer
 * transformMatrix
 * transformMatrixDefinitionFactory
 * transformMatrixFactory
@@ -13,3 +13,4 @@ write:
 * renderer
 
 * implement pause/unpause
+*
