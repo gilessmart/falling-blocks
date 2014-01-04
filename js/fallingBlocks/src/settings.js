@@ -8,9 +8,9 @@ fallingBlocks.settings = {
         dropInterval: 750,
         spawnAreaRows: 5,
         colours: {
-            landedBlock: '#333333',
-            background: '#F0F0F0',
-            fallingObject: '#666666'
+            landedBlock: '#414141',
+            background: '#c4cfa1',
+            fallingObject: '#6b7353'
         },
         fallingBlockDefinitions: [
             {

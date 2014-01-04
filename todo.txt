@@ -1,5 +1,4 @@
 test:
-* clock
 * game
 * inputListener
 * renderer
@@ -12,5 +11,9 @@ test:
 write:
 * renderer
 
+* rename fallingBlock to tetromino?
+* add all the tetrominos to settings
+* show score
+* speed up every 10 lines
 * implement pause/unpause
-*
+* show spawn ares / change logic so blocks can use whole playing areabut game is over when new block can't spawn
