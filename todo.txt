@@ -17,3 +17,6 @@ write:
 * speed up every 10 lines
 * implement pause/unpause
 * show spawn ares / change logic so blocks can use whole playing areabut game is over when new block can't spawn
+
+why does rotating a square around (0.5, 0.5) do weird things?
+should be able to do this, or (more likely) specify centre as null and not rotate
