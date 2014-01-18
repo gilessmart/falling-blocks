@@ -1,7 +1,7 @@
 var fallingBlocks = fallingBlocks || {};
 fallingBlocks.game = fallingBlocks.game || {};
 
-fallingBlocks.game.fallingObject = function (definition, initialCentreLocation) {
+fallingBlocks.game.tetrimino = function (definition, initialCentreLocation) {
     var quarterTurns = 0,
         centreLocation = initialCentreLocation;
 

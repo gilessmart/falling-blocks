@@ -20,7 +20,7 @@ fallingBlocks.game.renderer = function (context, width, height, gameState, spawn
             gameAreaRenderer.render(
                 context,
                 gameState.landedBlocks.getBlockLocations(),
-                gameState.fallingObject.getBlockLocations());
+                gameState.tetrimino.getBlockLocations());
             context.restore();
         }
     };

@@ -10,7 +10,7 @@ fallingBlocks.settings = {
         colours: {
             landedBlock: '#414141',
             background: '#c4cfa1',
-            fallingObject: '#6b7353'
+            tetrimino: '#6b7353'
         },
         fallingBlockDefinitions: [
             {

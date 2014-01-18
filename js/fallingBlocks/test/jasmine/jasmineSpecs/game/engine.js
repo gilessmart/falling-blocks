@@ -16,11 +16,11 @@ describe('engine', function () {
             ]
         };
         initialCentreLocation = { x: 2, y: 0 };
-        fallingObject = fallingBlocks.game.fallingObject(fallObjectDefinition, initialCentreLocation);
+        fallingObject = fallingBlocks.game.tetrimino(fallObjectDefinition, initialCentreLocation);
         landedBlocksCollection = fallingBlocks.game.landedBlocksCollection(5, 4);
         gameState = {
             landedBlocks: landedBlocksCollection,
-            fallingObject: fallingObject,
+            tetrimino: fallingObject,
             score: 0
         };
         engine = fallingBlocks.game.engine(gameState);

@@ -1,4 +1,4 @@
-describe('fallingObject', function () {
+describe('tetrimino', function () {
     it('returns initial positions of falling object blocks', function () {
         var definition = {
                 centreOffset: { x: 1, y: 0 },
@@ -10,7 +10,7 @@ describe('fallingObject', function () {
                 ]
             },
             initialPosition = { x: 10, y: 10 },
-            fallingBlock = fallingBlocks.game.fallingObject(definition, initialPosition);
+            fallingBlock = fallingBlocks.game.tetrimino(definition, initialPosition);
 
         expect(fallingBlock.getBlockLocations()).toEqual([
             { x: 9, y: 10 },
@@ -31,7 +31,7 @@ describe('fallingObject', function () {
                 ]
             },
             initialPosition = { x: 10, y: 10 },
-            fallingBlock = fallingBlocks.game.fallingObject(definition, initialPosition);
+            fallingBlock = fallingBlocks.game.tetrimino(definition, initialPosition);
 
         fallingBlock.move(fallingBlocks.game.directions.down);
         expect(fallingBlock.getBlockLocations()).toEqual([
@@ -53,7 +53,7 @@ describe('fallingObject', function () {
                 ]
             },
             initialPosition = { x: 10, y: 10 },
-            fallingBlock = fallingBlocks.game.fallingObject(definition, initialPosition);
+            fallingBlock = fallingBlocks.game.tetrimino(definition, initialPosition);
 
         fallingBlock.rotate(fallingBlocks.game.rotations.anticlockwise);
         expect(fallingBlock.getBlockLocations()).toEqual([
@@ -75,7 +75,7 @@ describe('fallingObject', function () {
                 ]
             },
             initialPosition = { x: 10, y: 10 },
-            fallingBlock = fallingBlocks.game.fallingObject(definition, initialPosition);
+            fallingBlock = fallingBlocks.game.tetrimino(definition, initialPosition);
 
         fallingBlock.rotate(fallingBlocks.game.rotations.clockwise);
         expect(fallingBlock.getBlockLocations()).toEqual([
@@ -97,7 +97,7 @@ describe('fallingObject', function () {
                 ]
             },
             initialPosition = { x: 10, y: 10 },
-            fallingBlock = fallingBlocks.game.fallingObject(definition, initialPosition);
+            fallingBlock = fallingBlocks.game.tetrimino(definition, initialPosition);
 
         expect(fallingBlock.getTranslatedBlockLocations(fallingBlocks.game.directions.down))
             .toEqual([
@@ -135,7 +135,7 @@ describe('fallingObject', function () {
                 ]
             },
             initialPosition = { x: 10, y: 10 },
-            fallingBlock = fallingBlocks.game.fallingObject(definition, initialPosition);
+            fallingBlock = fallingBlocks.game.tetrimino(definition, initialPosition);
 
         expect(fallingBlock.getRotatedBlockLocations(fallingBlocks.game.rotations.anticlockwise))
             .toEqual([

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FallingBlocks integration test</title>
+    <script src="../../src/game/tertimino.js"></script>
+    <script src="../../src/game/landedBlocksCollection.js"></script>
+    <script src="../../src/game/renderer.js"></script>
+    <script src="../../src/game/gameAreaRenderer.js"></script>
+
+    <script src="../../src/game/directions.js"></script>
+    <script src="../../src/game/rotations.js"></script>
+
+    <script src="../../src/game/transform.js"></script>
+    <script src="../../src/game/transformMatrix.js"></script>
+    <script src="../../src/game/transformMatrixFactory.js"></script>
+    <script src="../../src/game/transformMatrixDefinitionFactory.js"></script>
+    <script src="../../src/game/transformVector.js"></script>
+
+    <script src="../../src/util.js"></script>
+
+    <script src="../../src/keyboardInputSource.js"></script>
+    <script src="../../src/game/inputListener.js"></script>
+</head>
+<body>
+    <canvas id="MyCanvas" width="500" height="500" tabindex="0"></canvas>
+
+    <script>
+        (function () {
+            var myCanvas = document.getElementById('MyCanvas'),
+                keyCodes = {
+                    moveLeft: 37,
+                    moveRight: 39,
+                    moveDown: 40,
+                    rotateClockwise: 65,
+                    rotateAntiClockwise: 83
+                },
+                inputSource = fallingBlocks.keyboradInputSource(myCanvas, keyCodes),
+                inputListener = fallingBlocks.game.inputListener(inputSource);
+
+            inputListener.onDirection = function (direction) {
+                console.log(direction + ' direction started');
+            };
+
+            inputListener.onDirectionRepeat = function (direction) {
+                console.log(direction + ' direction repeated');
+            };
+
+            inputListener.onRotation = function (rotationDirection) {
+                console.log(rotationDirection + ' rotation');
+            };
+
+            inputListenerTest.startListening();
+        })();
+    </script>
+</body>
+</html>

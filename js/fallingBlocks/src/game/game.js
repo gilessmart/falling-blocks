@@ -5,7 +5,7 @@ fallingBlocks.game.game = function(canvas, inputListener, settings) {
     var clock = fallingBlocks.game.clock(settings.dropInterval),
         gameState = {
             landedBlocks: fallingBlocks.game.landedBlocksCollection(settings.columns, settings.rows),
-            fallingObject: null,
+            tetrimino: null,
             score: 0
         },
         engine,
@@ -18,7 +18,7 @@ fallingBlocks.game.game = function(canvas, inputListener, settings) {
                 y: settings.rows + fallingBlockDefinition.centreOffset.y
             };
 
-        gameState.fallingObject = fallingBlocks.game.fallingObject(fallingBlockDefinition, initialPosition);
+        gameState.tetrimino = fallingBlocks.game.tetrimino(fallingBlockDefinition, initialPosition);
     }
 
     function gameOver () {

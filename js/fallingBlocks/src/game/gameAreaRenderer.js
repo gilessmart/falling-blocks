@@ -20,7 +20,7 @@ fallingBlocks.game.gameAreaRenderer = function (blockSize, width, height, colour
 
             // render landed blocks
             fallingObjectLocations.forEach(function (blockLocation) {
-                context.fillStyle = colours.fallingObject;
+                context.fillStyle = colours.tetrimino;
                 context.fillRect(
                     blockLocation.x * blockSize,
                     height - blockSize - (blockLocation.y * blockSize),

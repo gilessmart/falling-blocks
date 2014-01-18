@@ -9,23 +9,23 @@ fallingBlocks.game.engine = function (gameState){
     }
 
     function canMoveObjectInDirection (direction) {
-        var translatedFallingBlockLocations = gameState.fallingObject.getTranslatedBlockLocations(direction);
+        var translatedFallingBlockLocations = gameState.tetrimino.getTranslatedBlockLocations(direction);
         return areLocationsAvailable(translatedFallingBlockLocations);
     }
 
     function canRotateObjectInDirection (direction) {
-        var rotatedFallingBlockLocations = gameState.fallingObject.getRotatedBlockLocations(direction);
+        var rotatedFallingBlockLocations = gameState.tetrimino.getRotatedBlockLocations(direction);
         return areLocationsAvailable(rotatedFallingBlockLocations);
     }
 
     return {
         tryToMoveFallingObject: function (direction) {
             if (canMoveObjectInDirection(direction)) {
-                gameState.fallingObject.move(direction);
+                gameState.tetrimino.move(direction);
                 this.onUpdated();
             }
             else if (direction === fallingBlocks.game.directions.down) {
-                gameState.landedBlocks.addLocations(gameState.fallingObject.getBlockLocations());
+                gameState.landedBlocks.addLocations(gameState.tetrimino.getBlockLocations());
 
                 var completeRowIndices = gameState.landedBlocks.getCompleteRowIndices();
 
@@ -41,7 +41,7 @@ fallingBlocks.game.engine = function (gameState){
 
         tryToRotateFallingObject: function (rotationDirection) {
             if (canRotateObjectInDirection(rotationDirection)) {
-                gameState.fallingObject.rotate(rotationDirection);
+                gameState.tetrimino.rotate(rotationDirection);
                 this.onUpdated();
             }
         },
