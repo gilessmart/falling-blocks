@@ -12,7 +12,7 @@ fallingBlocks.game.game = function(canvas, inputListener, settings) {
         renderer;
 
     function spawnFallingObject() {
-        var fallingBlockDefinition = fallingBlocks.util.getRandomElement(settings.fallingBlockDefinitions),
+        var fallingBlockDefinition = fallingBlocks.util.getRandomElement(settings.tetriminoDefinitions),
             initialPosition = {
                 x: Math.floor(settings.columns / 2),
                 y: settings.rows + fallingBlockDefinition.centreOffset.y

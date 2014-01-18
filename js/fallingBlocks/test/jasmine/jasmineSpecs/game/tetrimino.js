@@ -10,9 +10,9 @@ describe('tetrimino', function () {
                 ]
             },
             initialPosition = { x: 10, y: 10 },
-            fallingBlock = fallingBlocks.game.tetrimino(definition, initialPosition);
+            tetrimino = fallingBlocks.game.tetrimino(definition, initialPosition);
 
-        expect(fallingBlock.getBlockLocations()).toEqual([
+        expect(tetrimino.getBlockLocations()).toEqual([
             { x: 9, y: 10 },
             { x: 10, y: 10 },
             { x: 11, y: 10 },
@@ -31,10 +31,10 @@ describe('tetrimino', function () {
                 ]
             },
             initialPosition = { x: 10, y: 10 },
-            fallingBlock = fallingBlocks.game.tetrimino(definition, initialPosition);
+            tetrimino = fallingBlocks.game.tetrimino(definition, initialPosition);
 
-        fallingBlock.move(fallingBlocks.game.directions.down);
-        expect(fallingBlock.getBlockLocations()).toEqual([
+        tetrimino.move(fallingBlocks.game.directions.down);
+        expect(tetrimino.getBlockLocations()).toEqual([
             { x: 9, y: 9 },
             { x: 10, y: 9 },
             { x: 11, y: 9 },
@@ -53,10 +53,10 @@ describe('tetrimino', function () {
                 ]
             },
             initialPosition = { x: 10, y: 10 },
-            fallingBlock = fallingBlocks.game.tetrimino(definition, initialPosition);
+            tetrimino = fallingBlocks.game.tetrimino(definition, initialPosition);
 
-        fallingBlock.rotate(fallingBlocks.game.rotations.anticlockwise);
-        expect(fallingBlock.getBlockLocations()).toEqual([
+        tetrimino.rotate(fallingBlocks.game.rotations.anticlockwise);
+        expect(tetrimino.getBlockLocations()).toEqual([
             { x: 10, y: 9 },
             { x: 10, y: 10 },
             { x: 10, y: 11 },
@@ -75,10 +75,10 @@ describe('tetrimino', function () {
                 ]
             },
             initialPosition = { x: 10, y: 10 },
-            fallingBlock = fallingBlocks.game.tetrimino(definition, initialPosition);
+            tetrimino = fallingBlocks.game.tetrimino(definition, initialPosition);
 
-        fallingBlock.rotate(fallingBlocks.game.rotations.clockwise);
-        expect(fallingBlock.getBlockLocations()).toEqual([
+        tetrimino.rotate(fallingBlocks.game.rotations.clockwise);
+        expect(tetrimino.getBlockLocations()).toEqual([
             { x: 10, y: 11 },
             { x: 10, y: 10 },
             { x: 10, y: 9 },
@@ -97,9 +97,9 @@ describe('tetrimino', function () {
                 ]
             },
             initialPosition = { x: 10, y: 10 },
-            fallingBlock = fallingBlocks.game.tetrimino(definition, initialPosition);
+            tetrimino = fallingBlocks.game.tetrimino(definition, initialPosition);
 
-        expect(fallingBlock.getTranslatedBlockLocations(fallingBlocks.game.directions.down))
+        expect(tetrimino.getTranslatedBlockLocations(fallingBlocks.game.directions.down))
             .toEqual([
                 { x: 9, y: 9 },
                 { x: 10, y: 9 },
@@ -107,7 +107,7 @@ describe('tetrimino', function () {
                 { x: 10, y: 10 }
             ]);
 
-        expect(fallingBlock.getTranslatedBlockLocations(fallingBlocks.game.directions.left))
+        expect(tetrimino.getTranslatedBlockLocations(fallingBlocks.game.directions.left))
             .toEqual([
                 { x: 8, y: 10 },
                 { x: 9, y: 10 },
@@ -115,7 +115,7 @@ describe('tetrimino', function () {
                 { x: 9, y: 11 }
             ]);
 
-        expect(fallingBlock.getTranslatedBlockLocations(fallingBlocks.game.directions.right))
+        expect(tetrimino.getTranslatedBlockLocations(fallingBlocks.game.directions.right))
             .toEqual([
                 { x: 10, y: 10 },
                 { x: 11, y: 10 },
@@ -135,9 +135,9 @@ describe('tetrimino', function () {
                 ]
             },
             initialPosition = { x: 10, y: 10 },
-            fallingBlock = fallingBlocks.game.tetrimino(definition, initialPosition);
+            tetrimino = fallingBlocks.game.tetrimino(definition, initialPosition);
 
-        expect(fallingBlock.getRotatedBlockLocations(fallingBlocks.game.rotations.anticlockwise))
+        expect(tetrimino.getRotatedBlockLocations(fallingBlocks.game.rotations.anticlockwise))
             .toEqual([
                 { x: 10, y: 9 },
                 { x: 10, y: 10 },
@@ -145,7 +145,7 @@ describe('tetrimino', function () {
                 { x: 9, y: 10 }
             ]);
 
-        expect(fallingBlock.getRotatedBlockLocations(fallingBlocks.game.rotations.clockwise))
+        expect(tetrimino.getRotatedBlockLocations(fallingBlocks.game.rotations.clockwise))
             .toEqual([
                 { x: 10, y: 11 },
                 { x: 10, y: 10 },

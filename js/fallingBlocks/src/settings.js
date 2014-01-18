@@ -12,7 +12,7 @@ fallingBlocks.settings = {
             background: '#c4cfa1',
             tetrimino: '#6b7353'
         },
-        fallingBlockDefinitions: [
+        tetriminoDefinitions: [
             {
                 centreOffset: { x: 1, y: 1 },
                 blockOffsets: [
