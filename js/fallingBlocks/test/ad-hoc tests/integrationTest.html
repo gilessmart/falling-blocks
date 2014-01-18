@@ -3,6 +3,7 @@
 <head>
     <title>FallingBlocks integration test</title>
     <script src="../../src/game/tetrimino.js"></script>
+    <script src="../../src/game/tetriminoFactory.js"></script>
     <script src="../../src/game/landedBlocksCollection.js"></script>
     <script src="../../src/game/renderer.js"></script>
     <script src="../../src/game/gameAreaRenderer.js"></script>
@@ -32,9 +33,13 @@
     <script>
         (function () {
             var myCanvas = document.getElementById('MyCanvas'),
-                inputSource = fallingBlocks.keyboradInputSource(myCanvas, fallingBlocks.settings.defaultKeyCodes),
+                inputSource = fallingBlocks.keyboardInputSource(myCanvas, fallingBlocks.settings.defaultKeyCodes),
                 inputListener = fallingBlocks.game.inputListener(inputSource),
-                game = fallingBlocks.game.game(myCanvas, inputListener, fallingBlocks.settings.defaultGameSettings);
+                game = fallingBlocks.game.game(
+                    myCanvas,
+                    inputListener,
+                    fallingBlocks.settings.defaultGameSettings,
+                    fallingBlocks.game.tetriminoFactory);
 
             game.start();
         })();

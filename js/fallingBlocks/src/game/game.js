@@ -1,7 +1,7 @@
 var fallingBlocks = fallingBlocks || {};
 fallingBlocks.game = fallingBlocks.game || {};
 
-fallingBlocks.game.game = function(canvas, inputListener, settings) {
+fallingBlocks.game.game = function(canvas, inputListener, settings, tetriminoFactory) {
     var clock = fallingBlocks.game.clock(settings.dropInterval),
         gameState = {
             landedBlocks: fallingBlocks.game.landedBlocksCollection(settings.columns, settings.rows),
@@ -12,13 +12,10 @@ fallingBlocks.game.game = function(canvas, inputListener, settings) {
         renderer;
 
     function spawnFallingObject() {
-        var fallingBlockDefinition = fallingBlocks.util.getRandomElement(settings.tetriminoDefinitions),
-            initialPosition = {
-                x: Math.floor(settings.columns / 2),
-                y: settings.rows + fallingBlockDefinition.centreOffset.y
-            };
-
-        gameState.tetrimino = fallingBlocks.game.tetrimino(fallingBlockDefinition, initialPosition);
+        gameState.tetrimino = tetriminoFactory.createRandomTetriminoAtTopCentre(
+            settings.tetriminoDefinitions,
+            settings.rows,
+            settings.columns);
     }
 
     function gameOver () {
