@@ -59,7 +59,7 @@ fallingBlocks.game.game = function(canvas, inputListener, settings, tetriminoFac
                 renderer.render();
             };
 
-            engine.onFallingBlockLanded = function () {
+            engine.onTetriminoLanded = function () {
                 spawnTetrimino();
 
                 if (gameState.tetrimino.getBlockLocations().some(function (location) {
@@ -67,6 +67,10 @@ fallingBlocks.game.game = function(canvas, inputListener, settings, tetriminoFac
                 })) {
                     gameOver();
                 }
+            };
+
+            engine.onRemoveCompleteRows = function (rowCount) {
+                gameState.score += rowCount;
             };
 
             gameStart();

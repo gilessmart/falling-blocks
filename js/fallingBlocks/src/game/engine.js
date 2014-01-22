@@ -18,6 +18,21 @@ fallingBlocks.game.engine = function (gameState){
         return areLocationsAvailable(rotatedFallingBlockLocations);
     }
 
+    function removeCompleteRows() {
+        var completeRowIndices = gameState.landedBlocks.getCompleteRowIndices();
+        if (completeRowIndices.length > 0) {
+            gameState.landedBlocks.removeRows(completeRowIndices);
+        }
+
+        this.onRemoveCompleteRows(completeRowIndices.length);
+    }
+
+    function landTetrimino() {
+        gameState.landedBlocks.addLocations(gameState.tetrimino.getBlockLocations());
+        removeCompleteRows.call(this);
+        this.onTetriminoLanded();
+    }
+
     return {
         tryToMoveFallingObject: function (direction) {
             if (canMoveObjectInDirection(direction)) {
@@ -25,16 +40,7 @@ fallingBlocks.game.engine = function (gameState){
                 this.onUpdated();
             }
             else if (direction === fallingBlocks.game.directions.down) {
-                gameState.landedBlocks.addLocations(gameState.tetrimino.getBlockLocations());
-
-                var completeRowIndices = gameState.landedBlocks.getCompleteRowIndices();
-
-                if (completeRowIndices.length > 0) {
-                    gameState.landedBlocks.removeRows(completeRowIndices);
-                    gameState.score += completeRowIndices.length;
-                }
-
-                this.onFallingBlockLanded();
+                landTetrimino.call(this);
                 this.onUpdated();
             }
         },
@@ -48,6 +54,8 @@ fallingBlocks.game.engine = function (gameState){
 
         onUpdated: function () {},
 
-        onFallingBlockLanded: function () {}
+        onTetriminoLanded: function () {},
+
+        onRemoveCompleteRows: function (rowCount) {}
     }
 };

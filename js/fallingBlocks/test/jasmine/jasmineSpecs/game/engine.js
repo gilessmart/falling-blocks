@@ -67,13 +67,13 @@ describe('engine', function () {
     });
 
     it('lands the falling object if moving down when object touches bottom of playing area', function () {
-        spyOn(engine, 'onFallingBlockLanded');
+        spyOn(engine, 'onTetriminoLanded');
         spyOn(engine, 'onUpdated');
 
         engine.tryToMoveFallingObject(fallingBlocks.game.directions.down);
 
         expect(engine.onUpdated).toHaveBeenCalled();
-        expect(engine.onFallingBlockLanded).toHaveBeenCalled();
+        expect(engine.onTetriminoLanded).toHaveBeenCalled();
     });
 
 });
