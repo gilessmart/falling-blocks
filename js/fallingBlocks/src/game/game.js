@@ -11,7 +11,7 @@ fallingBlocks.game.game = function(canvas, inputListener, settings, tetriminoFac
         engine,
         renderer;
 
-    function spawnFallingObject() {
+    function spawnTetrimino() {
         gameState.tetrimino = tetriminoFactory.createRandomTetriminoAtTopCentre(
             settings.tetriminoDefinitions,
             settings.rows,
@@ -45,7 +45,7 @@ fallingBlocks.game.game = function(canvas, inputListener, settings, tetriminoFac
 
     return {
         start: function () {
-            spawnFallingObject();
+            spawnTetrimino();
             engine = fallingBlocks.game.engine(gameState);
             renderer = fallingBlocks.game.renderer(
                 canvas.getContext('2d'),
@@ -60,11 +60,12 @@ fallingBlocks.game.game = function(canvas, inputListener, settings, tetriminoFac
             };
 
             engine.onFallingBlockLanded = function () {
-                if (gameState.landedBlocks.isHighestBlockAbovePlayingArea()) {
+                spawnTetrimino();
+
+                if (gameState.tetrimino.getBlockLocations().some(function (location) {
+                    return gameState.landedBlocks.isLocationOccupied(location);
+                })) {
                     gameOver();
-                }
-                else {
-                    spawnFallingObject();
                 }
             };
 
