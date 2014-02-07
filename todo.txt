@@ -11,6 +11,10 @@ test:
 write:
 * renderer
 
+* consider making game state an object instead of a wrapper
+    it can do removeCompleteRows and landTetrimino for itself
+    and also canMoveObjectInDirection and canRotateObjectInDirection
+    (all currently in engine)
 * show score
 * speed up every 10 lines
 * implement pause/unpause
