@@ -7,23 +7,26 @@ fallingBlocks.game.transform = function () {
     return {
         rotateQuarterTurns: function (quarterTurns) {
             var quarterTurnsMatrix = fallingBlocks.game.transformMatrixFactory.getQuarterTurns(quarterTurns);
-            matrix = quarterTurnsMatrix.dotProduct(matrix);
+            //matrix = quarterTurnsMatrix.dotProduct(matrix);
+            matrix = fallingBlocks.game.matrixCalculation.multiplyMatrices(matrix, quarterTurnsMatrix);
         },
 
         translate: function (x, y) {
             var translationMatrix = fallingBlocks.game.transformMatrixFactory.getTranslation(x, y);
-            matrix = translationMatrix.dotProduct(matrix);
+            //matrix = translationMatrix.dotProduct(matrix);
+            matrix = fallingBlocks.game.matrixCalculation.multiplyMatrices(matrix, translationMatrix);
         },
 
         getTransformedLocation: function (location) {
-            var locationMatrix = fallingBlocks.game.transformMatrixFactory.getLocation(location),
+            /*var locationMatrix = fallingBlocks.game.transformMatrixFactory.getLocation(location),
                 newLocationMatrix = matrix.dotProduct(locationMatrix),
                 newLocationLocationVector = newLocationMatrix.getColumnVector(0);
 
             return {
                 x: newLocationLocationVector.getElement(0),
                 y: newLocationLocationVector.getElement(1)
-            };
+            };*/
+            return fallingBlocks.game.matrixCalculation.project(location, matrix);
         }
     };
 };

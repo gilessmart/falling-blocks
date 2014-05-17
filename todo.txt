@@ -21,3 +21,6 @@ write:
 
 why does rotating a square around (0.5, 0.5) do weird things?
 should be able to do this, or (more likely) specify centre as null and not rotate
+
+simple location transformation api movePoint, rotateAbout
+complex getTransformedTertimino or getTransformedBlockLocations

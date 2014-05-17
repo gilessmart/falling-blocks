@@ -13,7 +13,7 @@ fallingBlocks.settings = {
             tetrimino: '#6b7353'
         },
         tetriminoDefinitions: [
-            {
+            /*{
                 centreOffset: { x: 1, y: 0 },
                 blockOffsets: [
                     { x: 0, y: 0 },
@@ -30,7 +30,7 @@ fallingBlocks.settings = {
                     { x: 2, y: 0 },
                     { x: 1, y: 1 }
                 ]
-            },
+            },*/
             {
                 centreOffset: { x: 0, y: 0 },
                 blockOffsets: [
@@ -39,7 +39,7 @@ fallingBlocks.settings = {
                     { x: 1, y: 0 },
                     { x: 1, y: 1 }
                 ]
-            },
+            }/*,
             {
                 centreOffset: { x: 0, y: 1 },
                 blockOffsets: [
@@ -75,7 +75,7 @@ fallingBlocks.settings = {
                     { x: 2, y: 0 },
                     { x: 0, y: 1 }
                 ]
-            }
+            }*/
         ]
     },
 
