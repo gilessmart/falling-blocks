@@ -5,16 +5,30 @@ fallingBlocks.game.transformMatrix = function (matrixDefinition) {
     var definition = [].concat(matrixDefinition);
 
     return {
-        getRowVector: function(rowIndex) {
-            return fallingBlocks.game.transformVector(definition[rowIndex]);
+        getRows: function () {
+            return definition.map(function (rowDefinition) {
+                return fallingBlocks.game.transformVector(rowDefinition);
+            });
         },
 
-        getColumnVector: function(columnIndex) {
-            return fallingBlocks.game.transformVector(
-                definition.map(function(row){
-                    return row[columnIndex];
-                })
-            );
+        getColumns: function () {
+            var columns = [],
+                columnCount = this.getColumnCount(),
+                rowCount = this.getRowCount(),
+                columnIndex,
+                rowIndex;
+
+            for (columnIndex = 0; columnIndex < columnCount; columnIndex++) {
+                var columnDefinition = [];
+
+                for (rowIndex = 0; rowIndex < rowCount; rowIndex++) {
+                    columnDefinition.push(definition[rowIndex][columnIndex]);
+                }
+
+                columns.push(fallingBlocks.game.transformVector(columnDefinition));
+            }
+
+            return columns;
         },
 
         getRowCount: function () {
@@ -22,54 +36,18 @@ fallingBlocks.game.transformMatrix = function (matrixDefinition) {
         },
 
         getColumnCount: function () {
-            return Math.min.apply(null, definition.map(function (row) {
-                return row.length;
-            }));
+            return  Math.min.apply(null, definition.map(function (row) {
+                        return row.length;
+                    }));
         },
 
         isEqualTo: function matricesMatch (objectMatrix) {
-            var self = this;
-            return self.getRowCount() === objectMatrix.getRowCount() &&
-                self.getColumnCount() === objectMatrix.getColumnCount() &&
-                (function matrixRowsMatch () {
-                    var i,
-                        rows = self.getRowCount(),
-                        subjectRowVector,
-                        objectRowVector;
-
-                    for (i = 0; i < rows; i++) {
-                        subjectRowVector = self.getRowVector(i);
-                        objectRowVector = objectMatrix.getRowVector(i);
-                        if (!subjectRowVector.isEqualTo(objectRowVector)) {
-                            return false;
-                        }
-                    }
-
-                    return true;
-                })();
-        },
-
-        // TODO - migrate to matrix calculations
-        dotProduct: function(otherMatrix){
-            var definition = [
-                [
-                    this.getRowVector(0).dotProduct(otherMatrix.getColumnVector(0)),
-                    this.getRowVector(0).dotProduct(otherMatrix.getColumnVector(1)),
-                    this.getRowVector(0).dotProduct(otherMatrix.getColumnVector(2))
-                ],
-                [
-                    this.getRowVector(1).dotProduct(otherMatrix.getColumnVector(0)),
-                    this.getRowVector(1).dotProduct(otherMatrix.getColumnVector(1)),
-                    this.getRowVector(1).dotProduct(otherMatrix.getColumnVector(2))
-                ],
-                [
-                    this.getRowVector(2).dotProduct(otherMatrix.getColumnVector(0)),
-                    this.getRowVector(2).dotProduct(otherMatrix.getColumnVector(1)),
-                    this.getRowVector(2).dotProduct(otherMatrix.getColumnVector(2))
-                ]
-            ];
-
-            return fallingBlocks.game.transformMatrix(definition);
+            return  this.getRowCount() === objectMatrix.getRowCount() &&
+                    this.getColumnCount() === objectMatrix.getColumnCount() &&
+                    this.getRows().every(function (subjectRowVector, rowIndex) {
+                        var objectRowVector = objectMatrix.getRows()[rowIndex];
+                        return subjectRowVector.isEqualTo(objectRowVector);
+                    });
         }
     }
 };

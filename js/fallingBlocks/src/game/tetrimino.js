@@ -1,92 +1,83 @@
 var fallingBlocks = fallingBlocks || {};
 fallingBlocks.game = fallingBlocks.game || {};
 
-fallingBlocks.game.tetrimino = function (definition, initialCentreLocation) {
-    var quarterTurns = 0,
-        centreLocation = initialCentreLocation;
+fallingBlocks.game.tetrimino = function (definition, initialLocation) {
+    var relativeTransform = fallingBlocks.game.transform(),
+        locationTransform = fallingBlocks.game.transform();
+
+    // initialise the location transform
+    locationTransform.translate(initialLocation.x, initialLocation.y);
 
     function getRotatedRelativeOffsets () {
-        var transform = fallingBlocks.game.transform();
-
-        // translate centre offset to origin
-        transform.translate(definition.centreOffset.x * -1, definition.centreOffset.y * -1);
-
-        transform.rotateQuarterTurns(quarterTurns);
-
         return definition.blockOffsets.map(function (offset) {
-            return transform.getTransformedLocation(offset);
+            return relativeTransform.getTransformedLocation(offset);
+        });
+    }
+
+    function getTransformedBlockLocations (transform) {
+        return getRotatedRelativeOffsets().map(function (offset) {
+            var translatedOffset = transform.getTransformedLocation(offset);
+            return locationTransform.getTransformedLocation(translatedOffset);
         });
     }
 
     return {
         getBlockLocations: function () {
             return getRotatedRelativeOffsets().map(function (offset) {
-                return {
-                    x: offset.x + centreLocation.x,
-                    y: offset.y + centreLocation.y
-                };
+                return locationTransform.getTransformedLocation(offset);
             });
         },
 
-        getTranslatedBlockLocations: function(direction) {
-            return this.getBlockLocations().map(function(location){
-                var translatedLocation = {
-                    x: location.x,
-                    y: location.y
-                };
-
-                switch(direction) {
-                    case fallingBlocks.game.directions.left:
-                        translatedLocation.x -= 1;
-                        break;
-
-                    case fallingBlocks.game.directions.right:
-                        translatedLocation.x += 1;
-                        break;
-
-                    case fallingBlocks.game.directions.down:
-                        translatedLocation.y -= 1;
-                        break;
-                }
-
-                return translatedLocation;
-            });
-        },
-
-        getRotatedBlockLocations: function (direction) {
+        getTranslatedBlockLocations: function (direction) {
             var transform = fallingBlocks.game.transform();
 
             switch(direction) {
-                case fallingBlocks.game.rotations.anticlockwise:
-                    transform.rotateQuarterTurns(1);
+                case fallingBlocks.game.directions.left:
+                    transform.translate(-1, 0);
                     break;
 
-                case fallingBlocks.game.rotations.clockwise:
-                    transform.rotateQuarterTurns(-1);
+                case fallingBlocks.game.directions.right:
+                    transform.translate(1, 0);
+                    break;
+
+                case fallingBlocks.game.directions.down:
+                    transform.translate(0, -1);
                     break;
             }
 
-            return getRotatedRelativeOffsets().map(function (offset) {
-                var rotatedOffset = transform.getTransformedLocation(offset);
-                return {
-                    x: rotatedOffset.x + centreLocation.x,
-                    y: rotatedOffset.y + centreLocation.y
-                };
-            });
+            return getTransformedBlockLocations(transform);
+        },
+
+        getRotatedBlockLocations: function (direction) {
+            var transform = fallingBlocks.game.transform(),
+                quarterTurns = 0;
+
+            switch(direction) {
+                case fallingBlocks.game.rotations.anticlockwise:
+                    quarterTurns = 1;
+                    break;
+
+                case fallingBlocks.game.rotations.clockwise:
+                    quarterTurns = -1;
+                    break;
+            }
+
+            transform.rotateQuarterTurnsAboutPoint(quarterTurns, definition.rotationOffset);
+            return getTransformedBlockLocations(transform);
         },
 
         move: function (direction) {
             switch (direction) {
                 case fallingBlocks.game.directions.left:
-                    centreLocation.x -= 1;
+                    locationTransform.translate(-1, 0);
                     break;
 
                 case fallingBlocks.game.directions.right:
-                    centreLocation.x += 1;
+                    locationTransform.translate(1, 0);
                     break;
 
                 case fallingBlocks.game.directions.down:
-                    centreLocation.y -= 1;
+                    locationTransform.translate(0, -1);
                     break;
             }
         },
@@ -94,11 +85,11 @@ fallingBlocks.game.tetrimino = function (definition, initialCentreLocation) {
         rotate: function (rotationDirection) {
             switch (rotationDirection) {
                 case fallingBlocks.game.rotations.anticlockwise:
-                    quarterTurns += 1;
+                    relativeTransform.rotateQuarterTurnsAboutPoint(1, definition.rotationOffset);
                     break;
 
                 case fallingBlocks.game.rotations.clockwise:
-                    quarterTurns -= 1;
+                    relativeTransform.rotateQuarterTurnsAboutPoint(-1, definition.rotationOffset);
                     break;
             }
         }

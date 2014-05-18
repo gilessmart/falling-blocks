@@ -42,8 +42,7 @@ describe('matrixCalculation', function() {
             rotateMatrix = fallingBlocks.game.transformMatrix(rotateMatrixDefinition),
             translateMatrixDefinition = transformMatrixDefinitionFactory.getTranslation(4, 4),
             translateMatrix = fallingBlocks.game.transformMatrix(translateMatrixDefinition),
-            // TODO
-            expectedResultDefinition = [    [ 0, -1, -4 ],
+            expectedResultDefinition = [    [ 0, -1, 4 ],
                                             [ 1, 0, 4 ],
                                             [ 0, 0, 1 ]  ],
             expectedResult = fallingBlocks.game.transformMatrix(expectedResultDefinition),

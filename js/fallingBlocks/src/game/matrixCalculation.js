@@ -3,33 +3,21 @@ fallingBlocks.game = fallingBlocks.game || {};
 
 fallingBlocks.game.matrixCalculation = {
     multiplyMatrices: function(subjectMatrix, objectMatrix){
-        var definition = [
-            [
-                subjectMatrix.getRowVector(0).dotProduct(objectMatrix.getColumnVector(0)),
-                subjectMatrix.getRowVector(0).dotProduct(objectMatrix.getColumnVector(1)),
-                subjectMatrix.getRowVector(0).dotProduct(objectMatrix.getColumnVector(2))
-            ],
-            [
-                subjectMatrix.getRowVector(1).dotProduct(objectMatrix.getColumnVector(0)),
-                subjectMatrix.getRowVector(1).dotProduct(objectMatrix.getColumnVector(1)),
-                subjectMatrix.getRowVector(1).dotProduct(objectMatrix.getColumnVector(2))
-            ],
-            [
-                subjectMatrix.getRowVector(2).dotProduct(objectMatrix.getColumnVector(0)),
-                subjectMatrix.getRowVector(2).dotProduct(objectMatrix.getColumnVector(1)),
-                subjectMatrix.getRowVector(2).dotProduct(objectMatrix.getColumnVector(2))
-            ]
-        ];
+        var subjectMatrixRows = subjectMatrix.getRows(),
+            objectMatrixColumns = objectMatrix.getColumns(),
+            resultDefinition = subjectMatrixRows.map(function (subjectMatrixRow) {
+                return objectMatrixColumns.map(function (objectMatrixColumn) {
+                    return subjectMatrixRow.dotProduct(objectMatrixColumn);
+                })
+            });
 
-        return fallingBlocks.game.transformMatrix(definition);
+        return fallingBlocks.game.transformMatrix(resultDefinition);
     },
 
     multiplyMatrixByVector: function (matrix, vector) {
-        var resultVectorDefinition = [
-                matrix.getRowVector(0).dotProduct(vector),
-                matrix.getRowVector(1).dotProduct(vector),
-                matrix.getRowVector(2).dotProduct(vector)
-            ];
+        var resultVectorDefinition = matrix.getRows().map(function (rowVector) {
+                return rowVector.dotProduct(vector);
+            });
 
         return fallingBlocks.game.transformVector(resultVectorDefinition);
     },
@@ -39,6 +27,6 @@ fallingBlocks.game.matrixCalculation = {
             pointVector = fallingBlocks.game.transformVector(pointVectorDefinition),
             resultVector = this.multiplyMatrixByVector(transformMatrix, pointVector);
 
-        return { x: resultVector.getElement(0), y: resultVector.getElement(1) };
+        return { x: resultVector.getElements()[0], y: resultVector.getElements()[1] };
     }
 };

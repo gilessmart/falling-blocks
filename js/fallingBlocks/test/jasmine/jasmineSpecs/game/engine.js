@@ -8,7 +8,7 @@ describe('engine', function () {
 
     beforeEach(function () {
         fallObjectDefinition = {
-            centreOffset: { x: 0, y: 0 },
+            rotationOffset: { x: 0, y: 0 },
             blockOffsets: [
                 { x: 0, y: 0 },
                 { x: 1, y: 0 },

@@ -96,7 +96,7 @@ describe('transform', function() {
                 y: 1
             },
             expectedLocation = {
-                x: -6,
+                x: 4,
                 y: 6
             },
             actualLocation;
