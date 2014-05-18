@@ -53,7 +53,8 @@ fallingBlocks.game.game = function(canvas, inputListener, settings, tetriminoFac
                 canvas.offsetHeight,
                 gameState,
                 settings.spawnAreaRows,
-                settings.colours);
+                settings.colours,
+                settings.layout);
 
             engine.onUpdated = function () {
                 renderer.render();

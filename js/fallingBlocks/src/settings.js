@@ -3,14 +3,23 @@ fallingBlocks.game = fallingBlocks.game || {};
 
 fallingBlocks.settings = {
     defaultGameSettings: {
-        rows: 20,
+        rows: 18,
         columns: 10,
         dropInterval: 750,
         spawnAreaRows: 5,
         colours: {
             landedBlock: '#414141',
             background: '#c4cfa1',
-            tetrimino: '#6b7353'
+            tetrimino: '#6b7353',
+            scoreBoardText: '#414141',
+            scoreBoardWell: '#c4cfa1',
+            scoreboardBackground: '#414141'
+        },
+        layout: {
+            scoreBoardPadding: 5,
+            scoreBoardWellPadding: 4,
+            scoreBoardTextHeight: 18,
+            scoreBoardWidth: 100
         },
         tetriminoDefinitions: [
             {
