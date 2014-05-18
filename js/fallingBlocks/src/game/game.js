@@ -71,6 +71,7 @@ fallingBlocks.game.game = function(canvas, inputListener, settings, tetriminoFac
             };
 
             engine.onRemoveCompleteRows = function (rowCount) {
+                // TODO - implement score object, call current score 'points'
                 gameState.score += rowCount;
             };
 
