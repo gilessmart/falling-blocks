@@ -3,8 +3,8 @@ fallingBlocks.game = fallingBlocks.game || {};
 
 fallingBlocks.game.matrixCalculation = {
     multiplyMatrices: function(subjectMatrix, objectMatrix){
-        var subjectMatrixRows = subjectMatrix.getRows(),
-            objectMatrixColumns = objectMatrix.getColumns(),
+        var subjectMatrixRows = subjectMatrix.getRowVectors(),
+            objectMatrixColumns = objectMatrix.getColumnVectors(),
             resultDefinition = subjectMatrixRows.map(function (subjectMatrixRow) {
                 return objectMatrixColumns.map(function (objectMatrixColumn) {
                     return subjectMatrixRow.dotProduct(objectMatrixColumn);
@@ -15,7 +15,7 @@ fallingBlocks.game.matrixCalculation = {
     },
 
     multiplyMatrixByVector: function (matrix, vector) {
-        var resultVectorDefinition = matrix.getRows().map(function (rowVector) {
+        var resultVectorDefinition = matrix.getRowVectors().map(function (rowVector) {
                 return rowVector.dotProduct(vector);
             });
 

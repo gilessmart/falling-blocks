@@ -5,13 +5,13 @@ fallingBlocks.game.transformMatrix = function (matrixDefinition) {
     var definition = [].concat(matrixDefinition);
 
     return {
-        getRows: function () {
+        getRowVectors: function () {
             return definition.map(function (rowDefinition) {
                 return fallingBlocks.game.transformVector(rowDefinition);
             });
         },
 
-        getColumns: function () {
+        getColumnVectors: function () {
             var columns = [],
                 columnCount = this.getColumnCount(),
                 rowCount = this.getRowCount(),
@@ -44,8 +44,8 @@ fallingBlocks.game.transformMatrix = function (matrixDefinition) {
         isEqualTo: function matricesMatch (objectMatrix) {
             return  this.getRowCount() === objectMatrix.getRowCount() &&
                     this.getColumnCount() === objectMatrix.getColumnCount() &&
-                    this.getRows().every(function (subjectRowVector, rowIndex) {
-                        var objectRowVector = objectMatrix.getRows()[rowIndex];
+                    this.getRowVectors().every(function (subjectRowVector, rowIndex) {
+                        var objectRowVector = objectMatrix.getRowVectors()[rowIndex];
                         return subjectRowVector.isEqualTo(objectRowVector);
                     });
         }

@@ -54,7 +54,7 @@ describe('transformMatrix', function() {
                 fallingBlocks.game.transformVector([ 1, 1 ]),
                 fallingBlocks.game.transformVector([ 2, 2 ])
             ],
-            rows = matrixA.getRows();
+            rows = matrixA.getRowVectors();
 
         expect(rows.length).toBe(expectedRows.length);
         expect(rows[0].isEqualTo(expectedRows[0])).toBe(true);
@@ -71,7 +71,7 @@ describe('transformMatrix', function() {
                 fallingBlocks.game.transformVector([ 0, 1, 2 ]),
                 fallingBlocks.game.transformVector([ 3, 4, 5 ])
             ],
-            columns = matrixA.getColumns();
+            columns = matrixA.getColumnVectors();
 
         expect(columns.length).toBe(expectedColumns.length);
         expect(columns[0].isEqualTo(expectedColumns[0])).toBe(true);

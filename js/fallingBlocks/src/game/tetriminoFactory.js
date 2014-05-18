@@ -27,8 +27,6 @@ fallingBlocks.game.tetriminoFactory = (function () {
                     y: rows - 1 - highestOffsetHeight
                 };
 
-
-
             return fallingBlocks.game.tetrimino(tetriminoDefinition, initialCentrePosition);
         }
     };

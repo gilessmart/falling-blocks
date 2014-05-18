@@ -1,12 +1,12 @@
 describe('landedBlocksCollection', function () {
     it('can return the number of columns', function () {
         var landedBlocks = fallingBlocks.game.landedBlocksCollection(10, 20);
-        expect(landedBlocks.getColumns()).toEqual(10);
+        expect(landedBlocks.getColumnVectors()).toEqual(10);
     });
 
     it('can return the number of rows', function () {
         var landedBlocks = fallingBlocks.game.landedBlocksCollection(10, 20);
-        expect(landedBlocks.getRows()).toEqual(20);
+        expect(landedBlocks.getRowVectors()).toEqual(20);
     });
 
     it('can determine whether a location is allowable', function () {

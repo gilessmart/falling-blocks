@@ -2,8 +2,8 @@ var fallingBlocks = fallingBlocks || {};
 fallingBlocks.game = fallingBlocks.game || {};
 
 fallingBlocks.game.renderer = function (context, width, height, gameState, spawnAreaRows, colours) {
-    var rows = gameState.landedBlocks.getRows(),// + spawnAreaRows,
-        columns = gameState.landedBlocks.getColumns(),
+    var rows = gameState.landedBlocks.getRowVectors(),// + spawnAreaRows,
+        columns = gameState.landedBlocks.getColumnVectors(),
         maxBlockWidth = Math.floor(width / columns),
         maxBlockHeight = Math.floor(height / rows),
         blockSize = Math.min(maxBlockHeight, maxBlockWidth),

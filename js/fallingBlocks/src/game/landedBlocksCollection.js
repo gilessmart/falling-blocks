@@ -4,11 +4,11 @@ fallingBlocks.game = fallingBlocks.game || {};
 fallingBlocks.game.landedBlocksCollection = function(columns, rows) {
     var landedBlockLocations = [],
         me = {
-            getRows: function () {
+            getRowVectors: function () {
                 return rows;
             },
 
-            getColumns: function () {
+            getColumnVectors: function () {
                 return columns;
             },
 
