@@ -1,8 +1,9 @@
 var fallingBlocks = fallingBlocks || {};
 fallingBlocks.game = fallingBlocks.game || {};
 
-fallingBlocks.game.clock = function(interval){
-    var intervalId;
+fallingBlocks.game.clock = function(initialInterval, speedUpPercent){
+    var interval = initialInterval,
+        intervalId;
 
     return {
         start: function () {
@@ -20,6 +21,11 @@ fallingBlocks.game.clock = function(interval){
         restart: function () {
             this.stop();
             this.start();
+        },
+
+        speedUp: function () {
+            interval = Math.ceil(interval * (100 - speedUpPercent) / 100);
+            this.restart();
         },
 
         onTick: function () {}

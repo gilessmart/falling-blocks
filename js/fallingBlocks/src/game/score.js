@@ -37,9 +37,12 @@ fallingBlocks.game.score = function () {
             // if we have passed a 10 line boundary
             if (Math.floor(this.lines / 10) !== Math.floor((this.lines + lineCount) / 10)) {
                 this.level++;
+                this.onLevelUp();
             }
 
             this.lines += lineCount;
-        }
+        },
+
+        onLevelUp: function () {}
     };
 };

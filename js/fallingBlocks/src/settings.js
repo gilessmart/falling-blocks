@@ -5,7 +5,8 @@ fallingBlocks.settings = {
     defaultGameSettings: {
         rows: 18,
         columns: 10,
-        dropInterval: 750,
+        initialDropInterval: 750,
+        speedUpPercent: 10,
         spawnAreaRows: 5,
         colours: {
             landedBlock: '#414141',
