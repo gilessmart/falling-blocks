@@ -11,13 +11,6 @@ fallingBlocks.game.game = function(canvas, inputListener, settings, tetriminoFac
         engine,
         renderer;
 
-    function spawnTetrimino() {
-        gameState.tetrimino = tetriminoFactory.createRandomTetriminoAtTopCentre(
-            settings.tetriminoDefinitions,
-            settings.rows,
-            settings.columns);
-    }
-
     function gameOver () {
         clock.stop();
         inputListener.stopListening();
@@ -45,6 +38,18 @@ fallingBlocks.game.game = function(canvas, inputListener, settings, tetriminoFac
 
     return {
         start: function () {
+            function spawnTetrimino() {
+                gameState.tetrimino = tetriminoFactory.createRandomTetriminoAtTopCentre(
+                    settings.tetriminoDefinitions,
+                    settings.rows,
+                    settings.columns);
+            }
+
+            gameState = {
+                landedBlocks: fallingBlocks.game.landedBlocksCollection(settings.columns, settings.rows),
+                tetrimino: null,
+                score: fallingBlocks.game.score()
+            };
             spawnTetrimino();
             engine = fallingBlocks.game.engine(gameState);
             renderer = fallingBlocks.game.renderer(
@@ -71,8 +76,7 @@ fallingBlocks.game.game = function(canvas, inputListener, settings, tetriminoFac
             };
 
             engine.onRemoveCompleteRows = function (rowCount) {
-                // TODO - implement score object, call current score 'points'
-                gameState.score += rowCount;
+                gameState.score.addLines(rowCount);
             };
 
             gameStart();

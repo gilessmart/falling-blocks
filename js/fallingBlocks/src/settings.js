@@ -17,8 +17,9 @@ fallingBlocks.settings = {
         },
         layout: {
             scoreBoardPadding: 5,
-            scoreBoardWellPadding: 4,
-            scoreBoardTextHeight: 18,
+            scoreBoardWellPadding: 5,
+            scoreBoardWellGap: 5,
+            scoreBoardTextHeight: 17,
             scoreBoardWidth: 100
         },
         tetriminoDefinitions: [

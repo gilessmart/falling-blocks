@@ -2,38 +2,51 @@ var fallingBlocks = fallingBlocks || {};
 fallingBlocks.game = fallingBlocks.game || {};
 
 fallingBlocks.game.scoreBoardRenderer = function (width, height, colours, layout) {
+    function renderWell(context, width, height, label, value) {
+        context.fillStyle = colours.scoreBoardWell;
+        context.fillRect(
+            0,
+            0,
+            width,
+            height);
+
+        context.font = layout.scoreBoardTextHeight + 'px Courier';
+
+        context.textBaseline = 'top';
+        context.fillStyle = colours.scoreBoardText;
+        context.fillText(
+                label,
+                layout.scoreBoardWellPadding,
+                layout.scoreBoardWellPadding);
+
+        context.textBaseline = 'top';
+        context.fillStyle = colours.scoreBoardText;
+        context.fillText(
+                value,
+                layout.scoreBoardWellPadding,
+                layout.scoreBoardWellPadding + layout.scoreBoardTextHeight);
+    }
+
     return {
         render: function (context, score) {
             // render background
             context.fillStyle = colours.scoreboardBackground;
             context.fillRect(0, 0, width, height);
 
-            // render score
             var scoreWellHeight = 2 * (layout.scoreBoardTextHeight + layout.scoreBoardWellPadding),
                 scoreWellWidth = width - 2 * layout.scoreBoardPadding;
 
-            context.fillStyle = colours.scoreBoardWell;
-            context.fillRect(
-                layout.scoreBoardPadding,
-                layout.scoreBoardPadding,
-                scoreWellWidth,
-                scoreWellHeight);
+            context.save();
+            context.translate(layout.scoreBoardPadding, layout.scoreBoardPadding);
+            renderWell(context, scoreWellWidth, scoreWellHeight, 'Lines', score.lines);
 
-            context.font = layout.scoreBoardTextHeight + 'px Courier';
+            context.translate(0, scoreWellHeight + layout.scoreBoardWellGap);
+            renderWell(context, scoreWellWidth, scoreWellHeight, 'Score', score.points);
 
-            context.textBaseline = 'top';
-            context.fillStyle = colours.scoreBoardText;
-            context.fillText(
-                'Lines',
-                layout.scoreBoardWellPadding + layout.scoreBoardPadding,
-                layout.scoreBoardWellPadding + layout.scoreBoardPadding);
+            context.translate(0, scoreWellHeight + layout.scoreBoardWellGap);
+            renderWell(context, scoreWellWidth, scoreWellHeight, 'Level', score.level);
 
-            context.textBaseline = 'top';
-            context.fillStyle = colours.scoreBoardText;
-            context.fillText(
-                score,
-                layout.scoreBoardWellPadding + layout.scoreBoardPadding,
-                layout.scoreBoardWellPadding + layout.scoreBoardPadding + layout.scoreBoardTextHeight);
+            context.restore();
         }
     };
 };
