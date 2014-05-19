@@ -1,6 +1,3 @@
-* show score
-    implement scoring algorithm
-    show lines / score / level
-* speed up every 10 lines
 * implement pause/unpause
+* block patterns
 
