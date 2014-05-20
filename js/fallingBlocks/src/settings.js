@@ -1,5 +1,4 @@
 var fallingBlocks = fallingBlocks || {};
-fallingBlocks.game = fallingBlocks.game || {};
 
 fallingBlocks.settings = {
     defaultGameSettings: {

@@ -1,7 +1,7 @@
 describe('transform', function() {
 
     it('can rotate one quarter turn at a time', function () {
-        var transform = fallingBlocks.game.transform(),
+        var transform = fallingBlocks.geometry.transform(),
             initialLocation = {
                 x: 1,
                 y: 1
@@ -18,7 +18,7 @@ describe('transform', function() {
     });
 
     it("can rotate five quarter turns at a time", function () {
-        var transform = fallingBlocks.game.transform(),
+        var transform = fallingBlocks.geometry.transform(),
             initialLocation = {
                 x: 1,
                 y: 1
@@ -36,7 +36,7 @@ describe('transform', function() {
     });
 
     it('can translate up & right', function () {
-        var transform = fallingBlocks.game.transform(),
+        var transform = fallingBlocks.geometry.transform(),
             initialLocation = {
                 x: 0,
                 y: 0
@@ -53,7 +53,7 @@ describe('transform', function() {
     });
 
     it('can translate down & left', function () {
-        var transform = fallingBlocks.game.transform(),
+        var transform = fallingBlocks.geometry.transform(),
             initialLocation = {
                 x: 0,
                 y: 0
@@ -71,7 +71,7 @@ describe('transform', function() {
     });
 
     it('can translate then rotate', function () {
-        var transform = fallingBlocks.game.transform(),
+        var transform = fallingBlocks.geometry.transform(),
             initialLocation = {
                 x: 1,
                 y: 1
@@ -90,7 +90,7 @@ describe('transform', function() {
     });
 
     it('can rotate then translate', function () {
-        var transform = fallingBlocks.game.transform(),
+        var transform = fallingBlocks.geometry.transform(),
             initialLocation = {
                 x: 1,
                 y: 1
@@ -109,7 +109,7 @@ describe('transform', function() {
     });
 
     it('can rotate about an arbitrary point', function () {
-        var transform = fallingBlocks.game.transform(),
+        var transform = fallingBlocks.geometry.transform(),
             initialLocation = {
                 x: 10,
                 y: 10
@@ -129,7 +129,7 @@ describe('transform', function() {
     });
 
     it('can rotate a square', function () {
-        var transform = fallingBlocks.game.transform();
+        var transform = fallingBlocks.geometry.transform();
 
         transform.translate(0.5, 0.5);
         transform.rotateQuarterTurns(1);

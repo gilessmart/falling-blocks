@@ -4,7 +4,7 @@ describe('transformMatrix', function() {
         var matrixADefinition = [ [ 0, 0 ],
                                   [ 1, 1 ],
                                   [ 2, 2 ] ],
-            matrixA = fallingBlocks.game.transformMatrix(matrixADefinition);
+            matrixA = fallingBlocks.geometry.transformMatrix(matrixADefinition);
 
         expect(matrixA.getRowCount()).toBe(3);
     });
@@ -13,7 +13,7 @@ describe('transformMatrix', function() {
         var matrixADefinition = [ [ 0, 0 ],
                                   [ 1, 1 ],
                                   [ 2, 2 ] ],
-            matrixA = fallingBlocks.game.transformMatrix(matrixADefinition);
+            matrixA = fallingBlocks.geometry.transformMatrix(matrixADefinition);
 
         expect(matrixA.getColumnCount()).toBe(2);
     });
@@ -22,11 +22,11 @@ describe('transformMatrix', function() {
         var matrixADefinition = [   [ 0, 0 ],
                                     [ 1, 1 ],
                                     [ 2, 2 ]    ],
-            matrixA = fallingBlocks.game.transformMatrix(matrixADefinition),
+            matrixA = fallingBlocks.geometry.transformMatrix(matrixADefinition),
             matrixBDefinition = [   [ 0, 0 ],
                                     [ 1, 1 ],
                                     [ 2, 2 ]    ],
-            matrixB = fallingBlocks.game.transformMatrix(matrixBDefinition);
+            matrixB = fallingBlocks.geometry.transformMatrix(matrixBDefinition);
 
         expect(matrixA.isEqualTo(matrixB)).toBe(true);
     });
@@ -35,11 +35,11 @@ describe('transformMatrix', function() {
         var matrixADefinition = [   [ 0, 0 ],
                                     [ 1, 1 ],
                                     [ 2, 2 ]    ],
-            matrixA = fallingBlocks.game.transformMatrix(matrixADefinition),
+            matrixA = fallingBlocks.geometry.transformMatrix(matrixADefinition),
             matrixBDefinition = [   [ 0, 0 ],
                                     [ 1, 1 ],
                                     [ 2, 10 ]    ],
-            matrixB = fallingBlocks.game.transformMatrix(matrixBDefinition);
+            matrixB = fallingBlocks.geometry.transformMatrix(matrixBDefinition);
 
         expect(matrixA.isEqualTo(matrixB)).not.toBe(true);
     });
@@ -48,11 +48,11 @@ describe('transformMatrix', function() {
         var matrixADefinition = [   [ 0, 0 ],
                                     [ 1, 1 ],
                                     [ 2, 2 ]    ],
-            matrixA = fallingBlocks.game.transformMatrix(matrixADefinition),
+            matrixA = fallingBlocks.geometry.transformMatrix(matrixADefinition),
             expectedRows = [
-                fallingBlocks.game.transformVector([ 0, 0 ]),
-                fallingBlocks.game.transformVector([ 1, 1 ]),
-                fallingBlocks.game.transformVector([ 2, 2 ])
+                fallingBlocks.geometry.transformVector([ 0, 0 ]),
+                fallingBlocks.geometry.transformVector([ 1, 1 ]),
+                fallingBlocks.geometry.transformVector([ 2, 2 ])
             ],
             rows = matrixA.getRowVectors();
 
@@ -66,10 +66,10 @@ describe('transformMatrix', function() {
         var matrixADefinition = [   [ 0, 3 ],
                                     [ 1, 4 ],
                                     [ 2, 5 ]    ],
-            matrixA = fallingBlocks.game.transformMatrix(matrixADefinition),
+            matrixA = fallingBlocks.geometry.transformMatrix(matrixADefinition),
             expectedColumns = [
-                fallingBlocks.game.transformVector([ 0, 1, 2 ]),
-                fallingBlocks.game.transformVector([ 3, 4, 5 ])
+                fallingBlocks.geometry.transformVector([ 0, 1, 2 ]),
+                fallingBlocks.geometry.transformVector([ 3, 4, 5 ])
             ],
             columns = matrixA.getColumnVectors();
 

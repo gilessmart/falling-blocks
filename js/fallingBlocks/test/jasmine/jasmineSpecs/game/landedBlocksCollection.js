@@ -1,16 +1,16 @@
 describe('landedBlocksCollection', function () {
     it('can return the number of columns', function () {
-        var landedBlocks = fallingBlocks.game.landedBlocksCollection(10, 20);
+        var landedBlocks = fallingBlocks.landedBlocksCollection(10, 20);
         expect(landedBlocks.getColumnVectors()).toEqual(10);
     });
 
     it('can return the number of rows', function () {
-        var landedBlocks = fallingBlocks.game.landedBlocksCollection(10, 20);
+        var landedBlocks = fallingBlocks.landedBlocksCollection(10, 20);
         expect(landedBlocks.getRowVectors()).toEqual(20);
     });
 
     it('can determine whether a location is allowable', function () {
-        var landedBlocks = fallingBlocks.game.landedBlocksCollection(5, 10);
+        var landedBlocks = fallingBlocks.landedBlocksCollection(5, 10);
 
         // negative values of x and y are not allowable
         expect(landedBlocks.isLocationAllowable({ x: -1, y: 0  })).toBe(false);
@@ -31,7 +31,7 @@ describe('landedBlocksCollection', function () {
     });
 
     it('can determine whether a location is available', function () {
-        var landedBlocks = fallingBlocks.game.landedBlocksCollection(5, 10),
+        var landedBlocks = fallingBlocks.landedBlocksCollection(5, 10),
             newLocations = [
                 { x: 0, y: 0 },
                 { x: 2, y: 0 },
@@ -66,7 +66,7 @@ describe('landedBlocksCollection', function () {
     });
 
     it('marks added locations as occupied', function () {
-        var landedBlocks = fallingBlocks.game.landedBlocksCollection(5, 10),
+        var landedBlocks = fallingBlocks.landedBlocksCollection(5, 10),
             newLocations = [
                 { x: 0, y: 0 },
                 { x: 2, y: 0 },
@@ -90,7 +90,7 @@ describe('landedBlocksCollection', function () {
     });
 
     it('can calculate the indices of complete rows', function () {
-        var landedBlocks = fallingBlocks.game.landedBlocksCollection(5, 10),
+        var landedBlocks = fallingBlocks.landedBlocksCollection(5, 10),
             newLocations = [
                 { x: 0, y: 0 },
                 { x: 2, y: 0 },
@@ -120,7 +120,7 @@ describe('landedBlocksCollection', function () {
     });
 
     it('can remove rows, moving any rows above down', function () {
-        var landedBlocks = fallingBlocks.game.landedBlocksCollection(5, 10),
+        var landedBlocks = fallingBlocks.landedBlocksCollection(5, 10),
             newLocations = [
                 { x: 0, y: 0 },
                 { x: 2, y: 0 },
@@ -149,7 +149,7 @@ describe('landedBlocksCollection', function () {
     });
 
     it('can determine whether the highest block is above the playing area', function () {
-        var landedBlocks = fallingBlocks.game.landedBlocksCollection(3, 3);
+        var landedBlocks = fallingBlocks.landedBlocksCollection(3, 3);
 
         expect(landedBlocks.isHighestBlockAbovePlayingArea()).toBe(false);
 

@@ -1,6 +1,6 @@
 describe('score', function () {
     it('retrieves initial scores', function () {
-        var score = fallingBlocks.game.score();
+        var score = fallingBlocks.score();
 
         expect(score.lines).toBe(0);
         expect(score.points).toBe(0);
@@ -8,7 +8,7 @@ describe('score', function () {
     });
 
     it('retrieves scores after 1 line', function () {
-        var score = fallingBlocks.game.score();
+        var score = fallingBlocks.score();
 
         score.addLines(1);
 
@@ -18,7 +18,7 @@ describe('score', function () {
     });
 
     it('retrieves scores after 3 lines', function () {
-        var score = fallingBlocks.game.score();
+        var score = fallingBlocks.score();
 
         score.addLines(3);
 
@@ -28,7 +28,7 @@ describe('score', function () {
     });
 
     it('retrieves scores after 3 * 4 lines', function () {
-        var score = fallingBlocks.game.score();
+        var score = fallingBlocks.score();
 
         score.addLines(4);
         score.addLines(4);

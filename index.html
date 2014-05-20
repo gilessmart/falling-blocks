@@ -1,42 +1,36 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<html>
+<head>
+    <title>FallingBlocks Demo</title>
+    <script src="js/fallingBlocks/src/clock.js"></script>
+    <script src="js/fallingBlocks/src/directions.js"></script>
+    <script src="js/fallingBlocks/src/engine.js"></script>
+    <script src="js/fallingBlocks/src/fallingBlocks.js"></script>
+    <script src="js/fallingBlocks/src/game.js"></script>
+    <script src="js/fallingBlocks/src/landedBlocksCollection.js"></script>
+    <script src="js/fallingBlocks/src/rotations.js"></script>
+    <script src="js/fallingBlocks/src/score.js"></script>
+    <script src="js/fallingBlocks/src/settings.js"></script>
+    <script src="js/fallingBlocks/src/tetrimino.js"></script>
+    <script src="js/fallingBlocks/src/tetriminoFactory.js"></script>
+    <script src="js/fallingBlocks/src/util.js"></script>
 
-        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <script src="js/fallingBlocks/src/geometry/matrixCalculation.js"></script>
+    <script src="js/fallingBlocks/src/geometry/transform.js"></script>
+    <script src="js/fallingBlocks/src/geometry/transformMatrix.js"></script>
+    <script src="js/fallingBlocks/src/geometry/transformMatrixDefinitionFactory.js"></script>
+    <script src="js/fallingBlocks/src/geometry/transformMatrixFactory.js"></script>
+    <script src="js/fallingBlocks/src/geometry/transformVector.js"></script>
 
-        <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/main.css">
-        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
-    </head>
-    <body>
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
+    <script src="js/fallingBlocks/src/rendering/gameAreaRenderer.js"></script>
+    <script src="js/fallingBlocks/src/rendering/renderer.js"></script>
+    <script src="js/fallingBlocks/src/rendering/scoreBoardRenderer.js"></script>
 
-        <!-- Add your site or application content here -->
-        <p>Hello world! This is HTML5 Boilerplate.</p>
-
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
-
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <script>
-            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-            e.src='//www.google-analytics.com/analytics.js';
-            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-            ga('create','UA-XXXXX-X');ga('send','pageview');
-        </script>
-    </body>
+    <script src="js/fallingBlocks/src/userInput/inputListener.js"></script>
+    <script src="js/fallingBlocks/src/userInput/keyboardInputSource.js"></script>
+</head>
+<body>
+    <canvas id="MyCanvas" width="500" height="500" tabindex="0"></canvas>
+    <script src="js/main.js"></script>
+</body>
 </html>

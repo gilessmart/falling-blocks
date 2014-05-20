@@ -4,7 +4,7 @@ xdescribe('clock', function () {
 
     beforeEach(function () {
         jasmine.Clock.useMock();
-        clock = fallingBlocks.game.clock(interval);
+        clock = fallingBlocks.clock(interval);
         spyOn(clock, 'onTick');
     });
 
