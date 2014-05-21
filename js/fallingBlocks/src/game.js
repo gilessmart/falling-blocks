@@ -16,15 +16,30 @@ fallingBlocks.game = function(canvas, inputListener, settings, tetriminoFactory)
         clock.start();
     }
 
-    inputListener.onDirection = function(direction){
-        if (direction === fallingBlocks.directions.down) {
-            clock.restart();
+    inputListener.onDirection = function(direction) {
+        if (gameState.state === fallingBlocks.states.playing) {
+            if (direction === fallingBlocks.directions.down) {
+                clock.restart();
+            }
+            engine.tryToMoveFallingObject(direction);
         }
-        engine.tryToMoveFallingObject(direction);
     };
 
     inputListener.onRotation = function(rotationDirection){
-        engine.tryToRotateFallingObject(rotationDirection);
+        if (gameState.state === fallingBlocks.states.playing) {
+            engine.tryToRotateFallingObject(rotationDirection);
+        }
+    };
+
+    inputListener.onPause = function () {
+        if (gameState.state === fallingBlocks.states.playing) {
+            gameState.state = fallingBlocks.states.paused;
+            clock.stop();
+        }
+        else if (gameState.state === fallingBlocks.states.paused) {
+            gameState.state = fallingBlocks.states.playing;
+            clock.start();
+        }
     };
 
     return {
@@ -40,7 +55,8 @@ fallingBlocks.game = function(canvas, inputListener, settings, tetriminoFactory)
             gameState = {
                 landedBlocks: fallingBlocks.landedBlocksCollection(settings.columns, settings.rows),
                 tetrimino: null,
-                score: fallingBlocks.score()
+                score: fallingBlocks.score(),
+                state: fallingBlocks.states.playing
             };
             spawnTetrimino();
             engine = fallingBlocks.engine(gameState);

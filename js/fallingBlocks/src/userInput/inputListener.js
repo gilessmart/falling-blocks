@@ -10,8 +10,11 @@ fallingBlocks.userInput.inputListener = function (inputSource) {
                 if (input.direction) {
                     me.onDirection(input.direction);
                 }
-                else if (input.rotation){
+                else if (input.rotation) {
                     me.onRotation(input.rotation)
+                }
+                else if (input.pause) {
+                    me.onPause()
                 }
             };
         },
@@ -22,6 +25,8 @@ fallingBlocks.userInput.inputListener = function (inputSource) {
 
         onDirection: function (direction) {},
 
-        onRotation: function (rotation) {}
+        onRotation: function (rotation) {},
+
+        onPause: function () {}
     };
 };

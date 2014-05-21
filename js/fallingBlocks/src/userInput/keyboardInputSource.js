@@ -40,6 +40,12 @@ fallingBlocks.userInput.keyboardInputSource = function(container, keyCodes){
                     rotation: fallingBlocks.rotations.anticlockwise
                 };
                 break;
+
+            case keyCodes.pause:
+                input = {
+                    pause: true
+                };
+                break;
         }
 
         if (input)

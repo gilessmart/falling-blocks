@@ -94,6 +94,7 @@ fallingBlocks.settings = {
         moveRight: 39,
         moveDown: 40,
         rotateAntiClockwise: 65,
-        rotateClockwise: 83
+        rotateClockwise: 83,
+        pause: 32
     }
 };
