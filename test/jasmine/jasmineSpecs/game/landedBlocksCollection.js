@@ -1,14 +1,4 @@
 describe('landedBlocksCollection', function () {
-    it('can return the number of columns', function () {
-        var landedBlocks = fallingBlocks.landedBlocksCollection(10, 20);
-        expect(landedBlocks.getColumnVectors()).toEqual(10);
-    });
-
-    it('can return the number of rows', function () {
-        var landedBlocks = fallingBlocks.landedBlocksCollection(10, 20);
-        expect(landedBlocks.getRowVectors()).toEqual(20);
-    });
-
     it('can determine whether a location is allowable', function () {
         var landedBlocks = fallingBlocks.landedBlocksCollection(5, 10);
 
