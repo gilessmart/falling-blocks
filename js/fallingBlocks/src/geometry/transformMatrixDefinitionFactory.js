@@ -1,5 +1,5 @@
 var fallingBlocks = fallingBlocks || {};
-fallingBlocks.geometry = fallingBlocks.game || {};
+fallingBlocks.geometry = fallingBlocks.geometry || {};
 
 fallingBlocks.geometry.transformMatrixDefinitionFactory = {
     getQuarterTurns: function (quarterTurns) {

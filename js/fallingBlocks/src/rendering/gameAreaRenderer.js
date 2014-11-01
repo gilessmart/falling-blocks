@@ -1,5 +1,5 @@
 var fallingBlocks = fallingBlocks || {};
-fallingBlocks.rendering = fallingBlocks.game || {};
+fallingBlocks.rendering = fallingBlocks.rendering || {};
 
 fallingBlocks.rendering.gameAreaRenderer = function (blockSize, width, height, colours) {
     return {

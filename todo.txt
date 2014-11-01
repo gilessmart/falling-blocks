@@ -1,3 +1,5 @@
-* refactor game (game runner?)
-* block patterns
+* use require.js
+* pause notification
+* game over notification
 
+* block patterns?

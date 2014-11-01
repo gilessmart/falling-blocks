@@ -1,5 +1,5 @@
 var fallingBlocks = fallingBlocks || {};
-fallingBlocks.userInput = fallingBlocks.game || {};
+fallingBlocks.userInput = fallingBlocks.userInput || {};
 
 fallingBlocks.userInput.keyboardInputSource = function(container, keyCodes){
     var me = {

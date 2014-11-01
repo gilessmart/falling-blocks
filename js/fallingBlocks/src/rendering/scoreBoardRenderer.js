@@ -1,5 +1,5 @@
 var fallingBlocks = fallingBlocks || {};
-fallingBlocks.rendering = fallingBlocks.game || {};
+fallingBlocks.rendering = fallingBlocks.rendering || {};
 
 fallingBlocks.rendering.scoreBoardRenderer = function (width, height, colours, layout) {
     function renderWell(context, width, height, label, value) {

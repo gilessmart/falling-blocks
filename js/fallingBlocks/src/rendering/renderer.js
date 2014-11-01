@@ -1,5 +1,5 @@
 var fallingBlocks = fallingBlocks || {};
-fallingBlocks.rendering = fallingBlocks.game || {};
+fallingBlocks.rendering = fallingBlocks.rendering || {};
 
 fallingBlocks.rendering.renderer = function (context, width, height, gameState, spawnAreaRows, colours, layout) {
     var rows = gameState.landedBlocks.getRowVectors(),// + spawnAreaRows,
