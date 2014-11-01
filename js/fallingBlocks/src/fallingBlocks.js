@@ -1,10 +1,11 @@
 var fallingBlocks = fallingBlocks || {};
 
-fallingBlocks.fallingBlocks = function(canvas, keyCodes, gameSettings){
-    var inputSource = fallingBlocks.userInput.keyboardInputSource(canvas, keyCodes),
-        inputListener = fallingBlocks.userInput.inputListener(inputSource),
-        tetriminoFactory = fallingBlocks.tetriminoFactory,
-        game = fallingBlocks.game(canvas, inputListener, gameSettings, tetriminoFactory);
+fallingBlocks.init = function(canvas){
+    var inputSource = fallingBlocks.userInput.keyboardInputSource(canvas, fallingBlocks.settings.defaultKeyCodes),
+        inputListener = fallingBlocks.userInput.inputListener(inputSource);
 
-    game.start();
+    fallingBlocks.game( canvas,
+                        inputListener,
+                        fallingBlocks.settings.defaultGameSettings,
+                        fallingBlocks.tetriminoFactory);
 };
