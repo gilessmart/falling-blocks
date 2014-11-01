@@ -19,15 +19,12 @@ describe('landedBlocksCollection', function () {
         // values of x >= columns are not allowable
         expect(landedBlocks.isLocationAllowable({ x: 5, y: 0 })).toBe(false);
 
-        // other values are allowable, including values of y >= rows
+        // values of y >= rows are not allowable
+        expect(landedBlocks.isLocationAllowable({ x: 0, y: 11 })).toBe(false);
+
+        // other values are allowable
         expect(landedBlocks.isLocationAllowable({ x: 0, y: 0 })).toBe(true);
-        expect(landedBlocks.isLocationAllowable({ x: 4, y: 0 })).toBe(true);
-        expect(landedBlocks.isLocationAllowable({ x: 0, y: 4 })).toBe(true);
-        expect(landedBlocks.isLocationAllowable({ x: 0, y: 5 })).toBe(true);
-
-        // values of y >= rows are allowable
-        expect(landedBlocks.isLocationAllowable({ x: 0, y: 11 })).toBe(true);
-
+        expect(landedBlocks.isLocationAllowable({ x: 4, y: 9 })).toBe(true);
     });
 
     it('can determine whether a location is available', function () {
@@ -56,13 +53,15 @@ describe('landedBlocksCollection', function () {
         // values of x >= columns are not available
         expect(landedBlocks.isLocationAvailable({ x: 5, y: 0 })).toBe(false);
 
+        // values of y >= rows are not available
+        expect(landedBlocks.isLocationAvailable({ x: 0, y: 11 })).toBe(false);
+
         // other locations are available
         expect(landedBlocks.isLocationAvailable({ x: 1, y: 0 })).toBe(true);
         expect(landedBlocks.isLocationAvailable({ x: 3, y: 0 })).toBe(true);
         expect(landedBlocks.isLocationAvailable({ x: 0, y: 1 })).toBe(true);
         expect(landedBlocks.isLocationAvailable({ x: 2, y: 1 })).toBe(true);
         expect(landedBlocks.isLocationAvailable({ x: 4, y: 1 })).toBe(true);
-        expect(landedBlocks.isLocationAvailable({ x: 0, y: 11 })).toBe(true);
     });
 
     it('marks added locations as occupied', function () {
