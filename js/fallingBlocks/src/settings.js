@@ -12,14 +12,21 @@ fallingBlocks.settings = {
             tetrimino: '#6b7353',
             scoreBoardText: '#414141',
             scoreBoardWell: '#c4cfa1',
-            scoreboardBackground: '#414141'
+            scoreboardBackground: '#414141',
+            notificationBackground: '#c4cfa1',
+            notificationText: '#414141',
+            notificationBorder: '#414141'
         },
         layout: {
             scoreBoardPadding: 5,
             scoreBoardWellPadding: 5,
             scoreBoardWellGap: 5,
             scoreBoardTextHeight: 17,
-            scoreBoardWidth: 100
+            scoreBoardWidth: 100,
+            notificationAreaWidth: 200,
+            notificationAreaHeight: 60,
+            notificationTextHeight: 17,
+            notificationAreaBorderSize: 5
         },
         tetriminoDefinitions: [
             {
@@ -85,7 +92,12 @@ fallingBlocks.settings = {
                     { x: 0, y: 1 }
                 ]
             }
-        ]
+        ],
+        notificationMessages: {
+            paused: 'Paused',
+            gameOver: 'Game Over\nClick to play',
+            ready: 'Click to play'
+        }
     },
 
     defaultKeyCodes: {

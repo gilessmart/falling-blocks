@@ -1,0 +1,34 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+h1, h2, h3, h4, p, ul, ol, dl {
+    margin-bottom: 12px;
+}
+
+dd {
+    padding-left: 2em;
+    margin-bottom: 6px;
+}
+
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 12px;
+}
+
+.hide {
+    display: none;
+}
+
+#MainContainer {
+    max-width: 1000px;
+    margin: 10px auto;
+}
+
+canvas#MyCanvas,
+aside#Controls {
+    float: left;
+    margin-right: 20px;
+}

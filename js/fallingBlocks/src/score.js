@@ -42,6 +42,12 @@ fallingBlocks.score = function () {
             this.lines += lineCount;
         },
 
-        onLevelUp: function () {}
+        onLevelUp: function () {},
+
+        reset: function () {
+            this.lines = 0;
+            this.points = 0;
+            this.level = 0;
+        }
     };
 };

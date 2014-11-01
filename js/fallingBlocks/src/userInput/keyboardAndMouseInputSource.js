@@ -1,7 +1,7 @@
 var fallingBlocks = fallingBlocks || {};
 fallingBlocks.userInput = fallingBlocks.userInput || {};
 
-fallingBlocks.userInput.keyboardInputSource = function(container, keyCodes){
+fallingBlocks.userInput.keyboardAndMouseInputSource = function(container, keyCodes){
     var me = {
         onInput: function(input){}
     };

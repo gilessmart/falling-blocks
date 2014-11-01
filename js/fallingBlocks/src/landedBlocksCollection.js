@@ -3,14 +3,6 @@ var fallingBlocks = fallingBlocks || {};
 fallingBlocks.landedBlocksCollection = function(columns, rows) {
     var landedBlockLocations = [],
         me = {
-            getRowVectors: function () {
-                return rows;
-            },
-
-            getColumnVectors: function () {
-                return columns;
-            },
-
             getBlockLocations: function () {
                 return landedBlockLocations;
             },

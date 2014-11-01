@@ -2,6 +2,8 @@
 <html>
 <head>
     <title>FallingBlocks</title>
+    <link rel="stylesheet" href="main.css" />
+
     <script src="js/fallingBlocks/src/clock.js"></script>
     <script src="js/fallingBlocks/src/directions.js"></script>
     <script src="js/fallingBlocks/src/engine.js"></script>
@@ -29,32 +31,43 @@
     <script src="js/fallingBlocks/src/rendering/notificationRenderer.js"></script>
 
     <script src="js/fallingBlocks/src/userInput/inputListener.js"></script>
-    <script src="js/fallingBlocks/src/userInput/keyboardInputSource.js"></script>
+    <script src="js/fallingBlocks/src/userInput/keyboardAndMouseInputSource.js"></script>
 </head>
 <body>
-    <header>
-        <hgroup>
-            <h1>Falling blocks</h1>
-            <h2>A Tetris Clone in HTML5 Canvas / Javascript</h2>
-        </hgroup>
-    </header>
+    <div id="MainContainer">
+        <header>
+            <hgroup>
+                <h1>Falling blocks</h1>
+                <h2>A Tetris Clone in HTML5 Canvas / Javascript</h2>
+            </hgroup>
+        </header>
 
-    <canvas id="MyCanvas" width="340" height="432" tabindex="0"></canvas>
+        <section>
+            <header class="hide">
+                <h3>Demo</h3>
+            </header>
+
+            <canvas id="MyCanvas" width="340" height="432" tabindex="0"></canvas>
+
+            <aside id="Controls">
+                <header>
+                    <h3>Controls</h3>
+                </header>
+
+                <dl>
+                    <dt>Move</dt>
+                    <dd>Arrow keys</dd>
+
+                    <dt>Rotate Anticlockwise / Clockwise</dt>
+                    <dd>A / S</dd>
+
+                    <dt>Pause</dt>
+                    <dd>Space</dd>
+                </dl>
+            </aside>
+        </section>
+    </div>
+
     <script src="js/main.js"></script>
-
-    <section>
-        <h3>Controls</h3>
-
-        <dl>
-            <dt>Start</dt>
-            <dd>Click</dd>
-            <dt>Move</dt>
-            <dd>Arrow keys</dd>
-            <dt>Rotate Anticlockwise / Clockwise</dt>
-            <dd>A / S</dd>
-            <dt>Pause</dt>
-            <dd>Space</dd>
-        </dl>
-    </section>
 </body>
 </html>

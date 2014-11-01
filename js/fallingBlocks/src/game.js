@@ -8,7 +8,7 @@ fallingBlocks.game = function(canvas, inputListener, settings, tetriminoFactory)
 
     clock = fallingBlocks.clock(settings.initialDropInterval, settings.speedUpPercent);
     gameState = {
-        landedBlocks: fallingBlocks.landedBlocksCollection(settings.columns, settings.rows),
+        landedBlocks: null,
         tetrimino: null,
         score: fallingBlocks.score(),
         state: fallingBlocks.states.ready
@@ -16,11 +16,14 @@ fallingBlocks.game = function(canvas, inputListener, settings, tetriminoFactory)
     engine = fallingBlocks.engine(gameState);
     renderer = fallingBlocks.rendering.renderer(
         canvas.getContext('2d'),
+        settings.rows,
+        settings.columns,
         canvas.offsetWidth,
         canvas.offsetHeight,
         gameState,
         settings.colours,
-        settings.layout);
+        settings.layout,
+        settings.notificationMessages);
 
     function spawnTetrimino() {
         gameState.tetrimino = tetriminoFactory.createRandomTetriminoAtTopCentre(
@@ -30,8 +33,9 @@ fallingBlocks.game = function(canvas, inputListener, settings, tetriminoFactory)
     }
 
     function gameOver () {
+        gameState.state = fallingBlocks.states.gameOver;
         clock.stop();
-        inputListener.stopListening();
+        renderer.render();
     }
 
     inputListener.onDirection = function(direction) {
@@ -53,10 +57,12 @@ fallingBlocks.game = function(canvas, inputListener, settings, tetriminoFactory)
         if (gameState.state === fallingBlocks.states.playing) {
             gameState.state = fallingBlocks.states.paused;
             clock.stop();
+            renderer.render();
         }
         else if (gameState.state === fallingBlocks.states.paused) {
             gameState.state = fallingBlocks.states.playing;
             clock.start();
+            renderer.render();
         }
     };
 
@@ -90,9 +96,12 @@ fallingBlocks.game = function(canvas, inputListener, settings, tetriminoFactory)
     renderer.render();
 
     inputListener.onClick = function () {
-        if (gameState.state === fallingBlocks.states.ready) {
+        if (gameState.state === fallingBlocks.states.ready ||
+            gameState.state === fallingBlocks.states.gameOver) {
             spawnTetrimino();
             gameState.state = fallingBlocks.states.playing;
+            gameState.landedBlocks = fallingBlocks.landedBlocksCollection(settings.columns, settings.rows);
+            gameState.score.reset();
             clock.start();
             renderer.render();
         }
