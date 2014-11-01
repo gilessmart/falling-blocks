@@ -23,7 +23,7 @@ fallingBlocks.rendering.renderer = function (context, width, height, gameState, 
             gameAreaRenderer.render(
                 context,
                 gameState.landedBlocks.getBlockLocations(),
-                gameState.tetrimino.getBlockLocations());
+                gameState.tetrimino ? gameState.tetrimino.getBlockLocations() : []);
             context.restore();
 
             // render scoreboard

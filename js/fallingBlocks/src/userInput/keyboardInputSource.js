@@ -48,8 +48,16 @@ fallingBlocks.userInput.keyboardInputSource = function(container, keyCodes){
                 break;
         }
 
-        if (input)
+        if (input) {
+            e.preventDefault();
             me.onInput(input);
+        }
+    });
+
+    container.addEventListener('click', function(e) {
+        me.onInput({
+            click: true
+        });
     });
 
     return me;

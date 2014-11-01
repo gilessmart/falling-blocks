@@ -2,5 +2,7 @@ var fallingBlocks = fallingBlocks || {};
 
 fallingBlocks.states = {
     playing: {},
-    paused: {}
+    paused: {},
+    gameOver: {},
+    ready: {}
 };

@@ -14,7 +14,10 @@ fallingBlocks.userInput.inputListener = function (inputSource) {
                     me.onRotation(input.rotation)
                 }
                 else if (input.pause) {
-                    me.onPause()
+                    me.onPause();
+                }
+                else if (input.click) {
+                    me.onClick();
                 }
             };
         },
@@ -27,6 +30,8 @@ fallingBlocks.userInput.inputListener = function (inputSource) {
 
         onRotation: function (rotation) {},
 
-        onPause: function () {}
+        onPause: function () {},
+
+        onClick: function () {}
     };
 };

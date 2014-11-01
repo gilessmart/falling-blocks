@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>FallingBlocks Demo</title>
+    <title>FallingBlocks</title>
     <script src="js/fallingBlocks/src/clock.js"></script>
     <script src="js/fallingBlocks/src/directions.js"></script>
     <script src="js/fallingBlocks/src/engine.js"></script>
@@ -31,7 +31,29 @@
     <script src="js/fallingBlocks/src/userInput/keyboardInputSource.js"></script>
 </head>
 <body>
-    <canvas id="MyCanvas" width="500" height="500" tabindex="0"></canvas>
+    <header>
+        <hgroup>
+            <h1>Falling blocks</h1>
+            <h2>A Tetris Clone in HTML5 Canvas / Javascript</h2>
+        </hgroup>
+    </header>
+
+    <canvas id="MyCanvas" width="340" height="432" tabindex="0"></canvas>
     <script src="js/main.js"></script>
+
+    <section>
+        <h3>Controls</h3>
+
+        <dl>
+            <dt>Start</dt>
+            <dd>Click</dd>
+            <dt>Move</dt>
+            <dd>Arrow keys</dd>
+            <dt>Rotate Anticlockwise / Clockwise</dt>
+            <dd>A / S</dd>
+            <dt>Pause</dt>
+            <dd>Space</dd>
+        </dl>
+    </section>
 </body>
 </html>

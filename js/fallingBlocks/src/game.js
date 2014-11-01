@@ -6,14 +6,33 @@ fallingBlocks.game = function(canvas, inputListener, settings, tetriminoFactory)
         engine,
         renderer;
 
+    clock = fallingBlocks.clock(settings.initialDropInterval, settings.speedUpPercent);
+    gameState = {
+        landedBlocks: fallingBlocks.landedBlocksCollection(settings.columns, settings.rows),
+        tetrimino: null,
+        score: fallingBlocks.score(),
+        state: fallingBlocks.states.ready
+    };
+    engine = fallingBlocks.engine(gameState);
+    renderer = fallingBlocks.rendering.renderer(
+        canvas.getContext('2d'),
+        canvas.offsetWidth,
+        canvas.offsetHeight,
+        gameState,
+        settings.spawnAreaRows,
+        settings.colours,
+        settings.layout);
+
+    function spawnTetrimino() {
+        gameState.tetrimino = tetriminoFactory.createRandomTetriminoAtTopCentre(
+            settings.tetriminoDefinitions,
+            settings.rows,
+            settings.columns);
+    }
+
     function gameOver () {
         clock.stop();
         inputListener.stopListening();
-    }
-
-    function gameStart () {
-        inputListener.startListening();
-        clock.start();
     }
 
     inputListener.onDirection = function(direction) {
@@ -42,60 +61,40 @@ fallingBlocks.game = function(canvas, inputListener, settings, tetriminoFactory)
         }
     };
 
-    return {
-        start: function () {
-            function spawnTetrimino() {
-                gameState.tetrimino = tetriminoFactory.createRandomTetriminoAtTopCentre(
-                    settings.tetriminoDefinitions,
-                    settings.rows,
-                    settings.columns);
-            }
+    gameState.score.onLevelUp = function () {
+        clock.speedUp();
+    };
 
-            clock = fallingBlocks.clock(settings.initialDropInterval, settings.speedUpPercent);
-            gameState = {
-                landedBlocks: fallingBlocks.landedBlocksCollection(settings.columns, settings.rows),
-                tetrimino: null,
-                score: fallingBlocks.score(),
-                state: fallingBlocks.states.playing
-            };
+    clock.onTick = function(){
+        engine.tryToMoveFallingObject(fallingBlocks.directions.down);
+    };
+
+    engine.onUpdated = function () {
+        renderer.render();
+    };
+
+    engine.onTetriminoLanded = function () {
+        spawnTetrimino();
+
+        if (gameState.tetrimino.getBlockLocations().some(function (location) {
+                return gameState.landedBlocks.isLocationOccupied(location);
+            })) {
+            gameOver();
+        }
+    };
+
+    engine.onRemoveCompleteRows = function (rowCount) {
+        gameState.score.addLines(rowCount);
+    };
+
+    inputListener.startListening();
+    renderer.render();
+
+    inputListener.onClick = function () {
+        if (gameState.state === fallingBlocks.states.ready) {
             spawnTetrimino();
-            engine = fallingBlocks.engine(gameState);
-            renderer = fallingBlocks.rendering.renderer(
-                canvas.getContext('2d'),
-                canvas.offsetWidth,
-                canvas.offsetHeight,
-                gameState,
-                settings.spawnAreaRows,
-                settings.colours,
-                settings.layout);
-
-            gameState.score.onLevelUp = function () {
-                clock.speedUp();
-            };
-
-            clock.onTick = function(){
-                engine.tryToMoveFallingObject(fallingBlocks.directions.down);
-            };
-
-            engine.onUpdated = function () {
-                renderer.render();
-            };
-
-            engine.onTetriminoLanded = function () {
-                spawnTetrimino();
-
-                if (gameState.tetrimino.getBlockLocations().some(function (location) {
-                    return gameState.landedBlocks.isLocationOccupied(location);
-                })) {
-                    gameOver();
-                }
-            };
-
-            engine.onRemoveCompleteRows = function (rowCount) {
-                gameState.score.addLines(rowCount);
-            };
-
-            gameStart();
+            gameState.state = fallingBlocks.states.playing;
+            clock.start();
             renderer.render();
         }
     };

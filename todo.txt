@@ -1,5 +1,5 @@
 * use require.js
 * pause notification
 * game over notification
-
+* reorganise tests
 * block patterns?

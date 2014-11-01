@@ -18,7 +18,7 @@ fallingBlocks.rendering.gameAreaRenderer = function (blockSize, width, height, c
                     blockSize);
             });
 
-        // render falling object blocks
+            // render falling object blocks
             fallingObjectLocations.forEach(function (blockLocation) {
                 context.fillStyle = colours.tetrimino;
                 context.fillRect(
