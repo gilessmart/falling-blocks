@@ -1,4 +1,4 @@
-* use require.js
+* use require.js - setup tests for require
 * pause notification
 * game over notification
 * reorganise tests

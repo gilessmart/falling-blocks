@@ -1,8 +1,8 @@
 var fallingBlocks = fallingBlocks || {};
 fallingBlocks.rendering = fallingBlocks.rendering || {};
 
-fallingBlocks.rendering.renderer = function (context, width, height, gameState, spawnAreaRows, colours, layout) {
-    var rows = gameState.landedBlocks.getRowVectors(),// + spawnAreaRows,
+fallingBlocks.rendering.renderer = function (context, width, height, gameState, colours, layout) {
+    var rows = gameState.landedBlocks.getRowVectors(),
         columns = gameState.landedBlocks.getColumnVectors(),
         maxBlockWidth = Math.floor(width / columns),
         maxBlockHeight = Math.floor(height / rows),
@@ -33,6 +33,9 @@ fallingBlocks.rendering.renderer = function (context, width, height, gameState, 
                 context,
                 gameState.score);
             context.restore();
+
+            // render notification
+
         }
     };
 };

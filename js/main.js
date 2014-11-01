@@ -1,3 +1,3 @@
 (function () {
-    fallingBlocks.init (document.getElementById('MyCanvas'));
+    fallingBlocks.init(document.getElementById('MyCanvas'));
 })();
