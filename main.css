@@ -2,33 +2,37 @@
     margin: 0;
     padding: 0;
     border: none;
-}
-
-h1, h2, h3, h4, p, ul, ol, dl {
-    margin-bottom: 12px;
-}
-
-dd {
-    padding-left: 2em;
-    margin-bottom: 6px;
+    font-weight: normal;
 }
 
 body {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 12px;
+    font-family: sans-serif;
+    line-height: 1.5em;
+}
+
+h1, h2, h3, h4, h5, h6, p, ul, ol, dl {
+    margin-bottom: 0.75em;
+}
+
+li {
+    margin-left: 2em;
+}
+
+dd {
+    margin-left: 2em;
+    margin-bottom: 0.25em;
+}
+
+#MainContainer {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
 .hide {
     display: none;
 }
 
-#MainContainer {
-    max-width: 1000px;
-    margin: 10px auto;
-}
-
-canvas#MyCanvas,
-aside#Controls {
-    float: left;
-    margin-right: 20px;
+#FBCanvas {
+    margin-bottom: 0.75em;
 }

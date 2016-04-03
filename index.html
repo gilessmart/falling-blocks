@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>FallingBlocks</title>
+    <title>Falling Blocks</title>
     <link rel="stylesheet" href="main.css" />
 
     <script src="src/clock.js"></script>
@@ -37,8 +37,11 @@
     <div id="MainContainer">
         <header>
             <hgroup>
-                <h1>Falling blocks</h1>
-                <h2>A Tetris Clone in HTML5 Canvas / Javascript</h2>
+                <h1>Falling Blocks</h1>
+                <p>
+                    A Tetris Clone in HTML5 Canvas / Javascript<br />
+                    <a href="https://github.com/gilessmart/falling-blocks">See the code</a> on GitHub.
+                </p>
             </hgroup>
         </header>
 
@@ -47,29 +50,26 @@
                 <h3>Demo</h3>
             </header>
 
-            <canvas id="MyCanvas" width="340" height="432" tabindex="0"></canvas>
+            <canvas id="FBCanvas" width="340" height="432" tabindex="0"></canvas>
 
-            <aside id="Controls">
-                <header>
-                    <h3>Controls</h3>
-                </header>
+            <h2>Controls</h2>
+        
+            <dl>
+                <dt>Move</dt>
+                <dd>Arrow keys</dd>
 
-                <dl>
-                    <dt>Move</dt>
-                    <dd>Arrow keys</dd>
+                <dt>Rotate Anticlockwise / Clockwise</dt>
+                <dd>A / S</dd>
 
-                    <dt>Rotate Anticlockwise / Clockwise</dt>
-                    <dd>A / S</dd>
-
-                    <dt>Pause</dt>
-                    <dd>Space</dd>
-                </dl>
-            </aside>
+                <dt>Pause</dt>
+                <dd>Space</dd>
+            </dl>
+        
         </section>
     </div>
 
     <script>
-        fallingBlocks.init(document.getElementById('MyCanvas'));
+        fallingBlocks.init(document.getElementById('FBCanvas'));
     </script>
 </body>
 </html>
